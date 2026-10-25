@@ -1,200 +1,233 @@
 # Fieldwise AI — Role of AI in Smart Agriculture Solutions
 
-> **PRG4206 — Machine Learning · Group Research Project**  
-> **Institution:** INTI International University  
-> **Research window:** 2021–2026, with three separately marked foundational sources  
-> **Technology:** Streamlit research dashboard + React/Vite interactive website
+**Fieldwise AI** is a group research project for **PRG4206 — Machine Learning** at **INTI International University**. It explores how artificial intelligence (AI) and machine learning (ML) can support modern agriculture through production prediction, crop monitoring, disease detection, resource optimisation, and data-informed farm decisions.
 
-Fieldwise AI explores how artificial intelligence and machine learning can support smart agriculture through crop and livestock prediction, computer-vision monitoring, resource optimisation, connected farm systems, and responsible deployment.
+The repository contains two connected project experiences:
 
-This repository contains **two interfaces for the same research project**:
+- **React + Vite research website** — an interactive, visual overview of the smart-agriculture research landscape.
+- **Streamlit research dashboard** — a Python companion app for searching, filtering, exploring, and exporting records from the literature catalogue.
 
-- **Streamlit dashboard (Python):** a research-focused app for exploring the literature catalogue, filtering by year and focus area, reviewing selected study findings, and downloading filtered catalogue data as CSV.
-- **React/Vite website (TypeScript):** an interactive visual research website with architecture diagrams, research visualisations, application examples, case studies, a searchable literature explorer, and project methodology.
+Both interfaces are intended to help the group organise and explain research evidence. They are research and learning tools, not a production farm-control system, and they do not directly control agricultural equipment.
 
-The Streamlit app is a companion interface—not a conversion of the React website. Both interfaces use the Fieldwise AI research catalogue and communicate the limits of the evidence clearly.
+## Project at a glance
 
----
+| Item | Details |
+|---|---|
+| Project | Role of AI in Smart Agriculture Solutions |
+| Project name | Fieldwise AI |
+| Module | PRG4206 — Machine Learning |
+| Institution | INTI International University |
+| Main website stack | React, TypeScript, Vite, Recharts and CSS |
+| Research dashboard stack | Python, Streamlit and Pandas |
+| Literature catalogue | 58 records: 55 core records dated 2021–2026 and 3 foundational records |
+| Main research scope | Five smart-agriculture focus areas |
 
-## 🌱 What the project includes
+## Why this project matters
 
-- **Five assignment focus areas:** smart-agriculture data and system architecture; crop and livestock production prediction; monitoring and detection; resource and operations optimisation; deployment, ethics, and future trends.
-- **Research catalogue:** 55 core catalogue records dated 2021–2026 and three foundational records (58 records total). These are curated catalogue records, not a claim that every field in every paper has been verified against the full text.
-- **Streamlit literature dashboard:** searchable and filterable records, focus-area and publication-year summaries, individual paper details, and filtered CSV export.
-- **Source-linked findings:** selected quantitative examples from cited studies. Metrics such as accuracy, mAP, mIoU, precision, recall, R², and RMSE are not interchangeable and should not be ranked as one universal leaderboard.
-- **Research visualisations:** the React website includes charts with source/context notes. Its irrigation time series is synthetic demonstration data, not measured farm data.
-- **Deployment and ethics discussion:** rural connectivity, data quality, model generalisability, farmer adoption, affordability, privacy, and equitable access.
-- **Academic transparency:** publisher links are included for checking. DOI presence does not by itself verify every author, title, dataset, metric, result, or limitation.
+Agriculture produces data from many different sources, including soil and weather sensors, farm records, satellite and drone imagery, crop inspections, and livestock-monitoring systems. AI/ML methods can help turn these different data sources into useful predictions, detections, and recommendations. However, a model that performs well on one dataset is not automatically reliable on another farm, crop, season, or operating environment.
 
----
+Fieldwise AI brings together a structured research catalogue and an interactive explanation of this landscape. The project focuses not only on potential benefits, but also on evaluation metrics, evidence quality, deployment costs, connectivity, generalisability, privacy, and fair access to technology.
 
-## 🚀 Run the Streamlit dashboard
+## Research focus areas
 
-### Requirements
+The literature catalogue is organised around the five focus areas in the PRG4206 assignment brief:
 
-- Python 3.10 or later recommended
-- pip
-- The dependencies listed in **requirements.txt**
+1. **Smart Agriculture Data & System Architecture** — IoT and sensor data, data pipelines, cloud and edge computing, connected systems, and digital twins.
+2. **Crop & Livestock Production Prediction** — crop yield, production outcomes, quality, and livestock-related prediction approaches.
+3. **Monitoring & Detection** — computer vision and sensor-based approaches for identifying plant disease, weeds, and other agricultural conditions.
+4. **Resource & Operations Optimisation** — irrigation and input management, scheduling, automation, and resource-use decisions.
+5. **Deployment, Ethics & Future Trends** — connectivity and cost barriers, farmer adoption, data privacy, equity, federated learning, robotics, and emerging approaches.
 
-### Install and start locally
+The catalogue currently contains 55 core records from 2021–2026 and 3 older foundational records. The five focus areas each contain 11 core records in the present catalogue. These counts describe the catalogue structure; they do not mean that every paper has been exhaustively screened or every full-text result independently verified.
 
-**macOS / Linux**
+## What is included?
 
-```bash
-git clone https://github.com/Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions.git
-cd Role-of-AI-in-Smart-Agriculture-Solutions
+### 1. React + Vite research website
 
-python3 -m venv .venv
-source .venv/bin/activate
+The main website presents the project through visual storytelling and interactive research components.
 
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+- **Research overview:** introduces the project and its main questions.
+- **Agricultural applications:** explains uses of AI/ML across production, monitoring, resource management, and farm operations.
+- **Interactive charts:** presents selected source-linked metrics and catalogue breakdowns.
+- **System architecture:** illustrates a proposed agricultural data pipeline and the roles of edge and cloud computing.
+- **Literature explorer:** allows users to search and filter catalogue records and export relevant records as CSV.
+- **Case studies:** highlights selected study-specific findings with links to source publications.
+- **Challenges and future directions:** discusses field deployment, robustness, connectivity, privacy, and adoption.
+- **Evidence notes:** distinguishes selected reported research findings from synthetic demonstration data.
 
-streamlit run streamlit_app.py
-```
+The website uses **React 18, TypeScript, Vite, Recharts, Lucide React, and CSS**. It is a client-side research interface; it is not a trained model service or a live farm sensor platform.
 
-**Windows PowerShell**
+### 2. Streamlit research dashboard
 
-```powershell
-git clone https://github.com/Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions.git
-cd Role-of-AI-in-Smart-Agriculture-Solutions
+The Streamlit app provides a Python-based companion for exploring the same literature catalogue. It is useful for research review, demonstrations, and filtering records during a presentation.
 
-py -m venv .venv
-.\\.venv\\Scripts\\Activate.ps1
+- **Overview tab:** summary counts and charts showing records by focus area and publication year.
+- **Literature Explorer tab:** search titles, authors, model approaches, datasets, metrics, findings, and summaries.
+- **Filters:** narrow the catalogue by year and research focus area, with an option to include foundational records.
+- **Record details:** inspect the scope, dataset, reported metric, finding, limitation, venue, and publisher/DOI link for a selected record.
+- **CSV export:** download the currently filtered catalogue.
+- **Selected Findings tab:** view a small set of source-linked examples with warnings where reported metrics are not directly comparable.
+- **Team & Notes tab:** displays the group member list and project evidence notes.
 
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+The Streamlit app reads the catalogue snapshot in `streamlit_data/papers.json`. When updating research records, keep this JSON file aligned with the source catalogue in `src/data/papers.ts`.
 
-streamlit run streamlit_app.py
-```
+> **Deployment status:** the repository includes a Streamlit entry point and deployment instructions. A public live Streamlit URL should only be added here after deployment has completed successfully.
 
-Streamlit will show a local URL in the terminal, usually localhost port 8501.
+## Research evidence and limitations
 
-### Deploy on Streamlit Community Cloud
+This is a **curated literature catalogue and research presentation**, not a formal exhaustive systematic review or a clinical/field validation of an agricultural ML system.
 
-1. Sign in at [Streamlit Community Cloud](https://share.streamlit.io/) using the GitHub account with access to this repository.
-2. Choose **Create app**.
-3. Set the repository to **Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions**.
-4. Choose branch **main**.
-5. Set **Main file path** to **streamlit_app.py**.
-6. Select **Deploy** and wait for the build to finish.
+- **Source checking:** publisher DOI links are supplied as starting points. Not every author/title/year field, dataset detail, model description, metric, finding, or limitation has been independently checked against the full text of every paper.
+- **Interpret metrics in context:** accuracy, precision, recall, mean average precision (mAP), mean intersection over union (mIoU), (R^2), and root mean squared error (RMSE) describe different aspects of different tasks. They should not be combined into one cross-study performance leaderboard.
+- **Selected findings:** the interfaces display a limited set of quantitative examples that were located in the source material reviewed for this project. Open the cited source before using a result in an academic submission.
+- **Synthetic irrigation data:** the irrigation time-series shown on the React website is synthetic illustrative data, not real sensor readings or proof of water savings.
+- **Generalisability:** a result on a controlled image dataset does not guarantee equivalent performance under field lighting, new crops, different devices, or unfamiliar locations.
+- **No live ML prediction service:** this repository does not include a deployed model API that predicts an individual farm's outcomes. Charts and catalogue exploration are for research communication.
 
-Deployment guide: [Streamlit Community Cloud documentation](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy).
+These caveats are intentional: the project aims to communicate what selected sources report without presenting uncertain or illustrative information as verified field evidence.
 
-**Deployment status:** this repository contains the Streamlit entry point and configuration. A live Streamlit URL should only be shared after the app has been deployed successfully from the project owner's Streamlit account.
+## Technology stack
 
----
+| Component | Technologies |
+|---|---|
+| Main website | React 18, TypeScript, Vite |
+| Charts | Recharts |
+| Icons | Lucide React |
+| Website styling | CSS, design tokens, responsive layout and animations |
+| Companion dashboard | Python, Streamlit, Pandas |
+| Catalogue source | TypeScript data in `src/data/papers.ts` |
+| Streamlit data snapshot | JSON in `streamlit_data/papers.json` |
+| Version control | Git and GitHub |
 
-## 🖥️ Run the React/Vite website
-
-The original interactive website remains available separately from the Streamlit dashboard.
+## Run the React website locally
 
 ### Requirements
 
 - Node.js 18 or later (a current LTS release is recommended)
-- npm 9 or later
+- npm
+
+### Commands
+
+Clone the repository and enter the project directory:
+
+```bash
+git clone https://github.com/Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions.git
+cd Role-of-AI-in-Smart-Agriculture-Solutions
+```
+
+Install dependencies and start the development server:
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Vite normally serves the website at localhost port 5173.
+Vite prints the local development URL in the terminal, usually `http://localhost:5173/`.
 
-Useful additional commands:
+Run a TypeScript check:
 
 ```bash
 npm run typecheck
+```
+
+Create and preview a production build:
+
+```bash
 npm run build
 npm run preview
 ```
 
-The production build has not been certified by this README alone. Run the commands in your target environment and address any errors returned by the build.
+A successful local build should be confirmed in the environment used before publishing the website.
 
----
+## Run the Streamlit dashboard locally
 
-## 🧭 Streamlit dashboard guide
+From the same repository directory, install Python dependencies and launch the Streamlit app:
 
-The Python dashboard is in **streamlit_app.py** and has four main tabs:
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
 
-1. **Overview** — catalogue counts, focus areas, and records by publication year.
-2. **Literature Explorer** — keyword search, year and category filters, full catalogue fields, source links, and CSV download.
-3. **Selected Findings** — selected source-linked study results with cautions about metric and dataset comparability.
-4. **Team & Notes** — project context, group member details, and research evidence notes.
+On Windows, activate the virtual environment with:
 
-The source catalogue is exported to **streamlit_data/papers.json** for the Streamlit app. The React website uses **src/data/papers.ts**. When the catalogue changes, keep these two data sources synchronised.
+```powershell
+.venv\Scripts\Activate.ps1
+```
 
----
+Streamlit prints a local URL in the terminal, commonly `http://localhost:8501`.
 
-## 🧭 Research scope and marking-criteria alignment
+## Deploy the Streamlit dashboard
 
-| Assignment focus area | Where it is covered | Main questions |
-|---|---|---|
-| Smart Agriculture Data & System Architecture | Streamlit catalogue, React Architecture section | How do sensors, IoT, cloud/edge systems, drones, and farm records become usable model inputs? |
-| Crop & Livestock Production Prediction | Streamlit Selected Findings, React Applications and Data Visualisation | How are production outcomes predicted, which metrics are used, and how well do results generalise? |
-| Monitoring & Detection | Streamlit Selected Findings, React case studies and catalogue | How are disease, weeds, and crop conditions detected with vision or sensor data? |
-| Resource & Operations Optimisation | Streamlit Selected Findings, React visualisations and case studies | How can ML support irrigation, inputs, scheduling, and farm operations? |
-| Deployment, Ethics & Future Trends | Streamlit Team & Notes, React Challenges & Future section | What limits adoption, fairness, privacy, affordability, and field deployment? |
+The Streamlit companion can be deployed independently from the React website using **Streamlit Community Cloud**.
 
----
+1. Open [Streamlit Community Cloud](https://share.streamlit.io/) and sign in with the GitHub account that can access this repository.
+2. Create a new app.
+3. Select repository `Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions`.
+4. Select branch `main`.
+5. Set the main file path to `streamlit_app.py`.
+6. Start deployment and check the app logs if the build reports an error.
 
-## 📁 Repository structure
+Detailed steps are documented in [STREAMLIT_DEPLOYMENT.md](STREAMLIT_DEPLOYMENT.md). The Streamlit deployment is separate from the React website; publishing one does not automatically deploy the other.
+
+## Repository structure
 
 ```text
 .
-├── streamlit_app.py                 # Python/Streamlit research dashboard
-├── requirements.txt                 # Streamlit dependency
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.ts
+├── tsconfig.json
+├── streamlit_app.py                 # Streamlit dashboard entry point
+├── requirements.txt                 # Python dashboard dependencies
+├── STREAMLIT_DEPLOYMENT.md          # Streamlit deployment steps
 ├── streamlit_data/
-│   └── papers.json                  # Catalogue data read by Streamlit
+│   └── papers.json                  # Streamlit literature data snapshot
 ├── .streamlit/
 │   └── config.toml                  # Streamlit theme configuration
-├── STREAMLIT_DEPLOYMENT.md          # Community Cloud deployment notes
-├── index.html                       # React/Vite website entry point
-├── package.json                     # JavaScript dependencies and scripts
-├── package-lock.json                # Locked JavaScript dependency tree
-├── vite.config.ts                   # Vite configuration
-├── tsconfig.json                    # TypeScript configuration
-├── public/                          # Icons and web-font assets
+├── public/
+│   ├── favicon.svg
+│   └── fonts/
 └── src/
-    ├── main.tsx                     # React bootstrap
-    ├── App.tsx                      # Main website layout
+    ├── main.tsx
+    ├── App.tsx
+    ├── App.css
     ├── data/
-    │   ├── papers.ts                # React literature catalogue
-    │   ├── chartData.ts             # Source-linked chart records and summaries
-    │   └── images.ts                # Website image references
-    ├── styles/                      # Design tokens and animations
-    └── components/                  # Website sections and visualisations
+    │   ├── papers.ts                # Literature catalogue (58 records)
+    │   ├── chartData.ts             # Selected chart data and summaries
+    │   └── images.ts                # Image references and alt text
+    ├── styles/
+    │   ├── tokens.css
+    │   └── animations.css
+    └── components/                  # Research sections, explorer and charts
 ```
 
----
+## Group members
 
-## 📚 Evidence quality and academic integrity
+| Name | Student ID |
+|---|---|
+| GAYATHRI SAI TAPASWINI IRAGAVARAPU | I26043735 |
+| MOHAN MEKALA | I26043589 |
+| Uma Maheshwari Srinivasan | I26044266 |
+| Takunda Godwell Mushure | I25029962 |
+| Vishnu Vardhan Chilakacharla | I26043592 |
 
-- The catalogue contains 55 core records dated 2021–2026 and three foundational records, for 58 records in total. The core catalogue has 11 entries assigned to each of the five focus areas; this is a structural count, not proof of exhaustive screening or full-text validation.
-- Publisher DOI links are provided to help readers check original sources. Verify the original paper before citing any study-specific statement.
-- Review articles and conceptual papers do not receive invented empirical scores. Where study details have not been independently extracted, the catalogue says so.
-- The wheat-yield example compares two configurations reported in one study. Other model metrics may refer to different tasks or datasets and should not be treated as directly comparable.
-- The React irrigation time series is **synthetic demonstration data**, not farm-measured evidence. It must not be described as actual farm performance or proven water savings.
-- Before academic submission, the group should read and verify the primary papers used in the final report and ensure all claims are correctly cited.
-- Use AI tools only within the course's responsible-AI policy. Acknowledge assistance accurately and make sure the group understands and can explain the work.
+## Academic integrity and acknowledgements
 
----
+This repository supports a group research assignment. All team members should read and understand the findings they present, check important claims against the original sources, and follow the lecturer's requirements for citations, similarity, and responsible AI use. Acknowledge AI-assisted work accurately in the submitted report or presentation as required by the course.
 
-## 👥 Group members
+Do not treat a citation being present in the catalogue as proof that the entire paper has been independently verified. Before final submission, check the original publication and ensure that each claim is supported by the cited source.
 
-- **GAYATHRI SAI TAPASWINI IRAGAVARAPU** — I26043735
-- **MOHAN MEKALA** — I26043589
-- **Uma Maheshwari Srinivasan** — I26044266
-- **Takunda Godwell Mushure** — I25029962
-- **Vishnu Vardhan Chilakacharla** — I26043592
-
----
-
-## 🔗 Project resources
+## Useful links
 
 - [GitHub repository](https://github.com/Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions)
-- [Streamlit Community Cloud](https://share.streamlit.io/)
-- [Streamlit deployment documentation](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy)
+- [Streamlit deployment guide](STREAMLIT_DEPLOYMENT.md)
 - [Research audit status](AUDIT_STATUS.md)
-- [Group presentation](Fieldwise_AI_Smart_Agriculture_Group_Presentation.pptx)
-- [Streamlit deployment notes](STREAMLIT_DEPLOYMENT.md)
+- [PRG4206 group presentation](Fieldwise_AI_Smart_Agriculture_Group_Presentation.pptx)
+
+---
+
+**Fieldwise AI** — exploring how machine learning can support smarter, more sustainable, and more evidence-informed agriculture.
