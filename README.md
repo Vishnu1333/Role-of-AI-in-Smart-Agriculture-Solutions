@@ -2,191 +2,178 @@
 
 **PRG4206 Machine Learning · INTI International University · Group Research Project**
 
-Fieldwise AI is an interactive research website that explores how artificial intelligence (AI) and machine learning (ML) can support smarter agricultural decisions. It brings together a curated literature catalogue, selected source-linked research findings, interactive visualisations, and a system-architecture overview in one responsive React website.
+Fieldwise AI is a two-part research project exploring how artificial intelligence (AI) and machine learning (ML) can support smarter agricultural decisions. It connects a responsive React research website with a companion Python/Streamlit dashboard for exploring a curated literature catalogue and reviewing study-specific performance results.
 
-The project is a **research and visualisation platform**. It does not currently train or serve a live ML model, connect to physical farm sensors, or include the raw source datasets from the publications.
+> **Project scope:** Fieldwise AI is a research and visualisation platform. It does not train a new ML model, does not compute its own overall model-accuracy score, and does not bundle the original image, sensor or farm datasets from the cited publications. Reported scores belong to the cited studies and their evaluation setups.
 
 ## Contents
-
-- [Project goals](#project-goals)
+- [Project overview](#project-overview)
 - [Five research focus areas](#five-research-focus-areas)
 - [Features](#features)
-- [Datasets and research data](#datasets-and-research-data)
+- [Datasets and reported results](#datasets-and-reported-results)
 - [Technology stack](#technology-stack)
 - [Project structure](#project-structure)
-- [Run locally](#run-locally)
-- [Deploy the website](#deploy-the-website)
+- [Run the React website](#run-the-react-website)
+- [Run the Streamlit dashboard](#run-the-streamlit-dashboard)
+- [Deploy the Streamlit dashboard](#deploy-the-streamlit-dashboard)
+- [Deploy the React website](#deploy-the-react-website)
 - [Group members](#group-members)
 - [Research limitations and academic integrity](#research-limitations-and-academic-integrity)
 
-## Project goals
+## Project overview
+Modern agriculture uses soil and weather sensors, drones, satellite imagery, field records, crop-monitoring tools and livestock data. AI/ML can help interpret these sources for yield prediction, disease and weed detection, irrigation planning and operational decisions.
 
-Modern farming increasingly relies on information from soil and weather sensors, satellite and drone imagery, field records, and crop-monitoring systems. AI/ML techniques can use these sources to support tasks such as crop-yield estimation, disease and weed detection, irrigation planning, and farm-operation decisions.
+Fieldwise AI brings the research together in an interactive interface. It presents selected publisher-linked results, explains evaluation metrics, outlines an agriculture data pipeline and supports literature exploration across the smart-agriculture ecosystem.
 
-Fieldwise AI is designed to help students and readers explore the research behind these uses. It emphasises the data and validation conditions behind each finding, rather than presenting results from different studies as if they were directly interchangeable.
-
-The literature catalogue contains **55 core records dated 2021–2026** and **3 foundational records**. The five assignment focus areas each contain 11 core catalogue records. These are catalogue counts, not proof that every publication has been read in full or independently verified.
+The literature catalogue contains **55 core records dated 2021–2026** and **3 foundational records**. The 55 core records are assigned across the five focus areas, with 11 entries per area. Counts describe catalogue structure, not exhaustive search coverage or complete full-text verification.
 
 ## Five research focus areas
-
-| Focus area | Topics covered |
+| Focus area | Topics |
 |---|---|
-| **1. Smart Agriculture Data & System Architecture** | Sensor and IoT data, drones, satellite imagery, data ingestion, edge/cloud computing, digital twins, and rural connectivity. |
-| **2. Crop & Livestock Production Prediction** | Crop-yield and quality prediction, climate and soil features, remote-sensing indicators, model selection, and evaluation metrics. |
-| **3. Monitoring & Detection** | Plant-disease and weed detection, computer vision, image segmentation, sensor-based monitoring, and in-field deployment considerations. |
-| **4. Resource & Operations Optimisation** | Irrigation and water management, resource scheduling, farm automation, and reinforcement-learning approaches described in the literature. |
-| **5. Deployment, Ethics & Future Trends** | Cost and connectivity barriers, privacy, farmer adoption, access for smallholders, federated learning, robotics, and emerging systems. |
+| **1. Smart Agriculture Data & System Architecture** | IoT and sensor data, drones, satellite imagery, data ingestion/cleaning, edge-cloud architecture, digital twins and rural connectivity. |
+| **2. Crop & Livestock Production Prediction** | Crop yield and quality, livestock health, climate/soil features, remote-sensing indicators, model selection and regression metrics. |
+| **3. Monitoring & Detection** | Plant disease and weed detection, computer vision, segmentation, sensor fusion and edge-device deployment. |
+| **4. Resource & Operations Optimisation** | Irrigation, water and energy scheduling, input management, farm operations, automation and reinforcement learning. |
+| **5. Deployment, Ethics & Future Trends** | Cost, connectivity, data privacy, digital literacy, equitable access, federated learning and agricultural robotics. |
 
 ## Features
+### React + Vite research website
+- Responsive, animated design with custom CSS and a visual research-first layout.
+- Interactive Recharts visualisations with study context in the tooltips.
+- Seven-stage agricultural data pipeline and edge/cloud architecture discussion.
+- Searchable literature explorer with focus-area filters, expanded paper details and CSV export.
+- Dataset Results & Metrics section with dataset names, model names, reported scores, metric types and DOI links.
+- Case studies, methodology, deployment challenges, future trends and research evidence notes.
 
-- **Responsive research website** with a dark, editorial visual style, agricultural imagery, and responsive hero composition.
-- **Five interactive research visualisations** with tooltips, source details, and cautions where the underlying metrics or data are not directly comparable.
-- **Searchable literature explorer** covering the catalogue records, including year and application metadata.
-- **Filters and expandable record details** to browse authors, publication years, application areas, model families, dataset notes, metrics, findings, and limitations.
-- **CSV export** for the filtered literature catalogue.
-- **System architecture diagram** describing a proposed agricultural data pipeline from sensing and ingestion through processing, modelling, and decision support.
-- **Selected case studies** that link specific findings to their source publications.
-- **Evidence notes** that distinguish reported publication results from illustrative website elements and synthetic chart data.
+### Python + Streamlit dashboard
+- Overview of catalogue counts, focus areas and publication-year distribution.
+- Dataset Results & Accuracy tab with selected source-linked study results.
+- Searchable, filterable research catalogue displaying dataset/scope and reported metric fields.
+- CSV export of the filtered catalogue.
+- Group member information and evidence/limitations notes.
+- Separate companion UI; it is not a pixel-for-pixel copy of the React website.
 
-## Datasets and research data
+## Datasets and reported results
+The application records dataset names/descriptions and selected evaluation results from the cited publications. **Raw source datasets are not included in this repository.** Results below belong to the cited papers and are not accuracy scores for Fieldwise AI.
 
-### Research datasets referenced in the literature catalogue
+| Dataset / study data | Model | Reported result | Interpretation |
+|---|---|---|---|
+| Plant-disease image database in Ferentinos (2018): 87,848 images; 25 plant species; 58 classes; reported on 17,548 unseen images | CNN architectures | **99.53% accuracy** | Foundational image-classification benchmark, not live-farm accuracy. [Source](https://doi.org/10.1016/j.compag.2018.01.009) |
+| PlantVillage: 54,306 images; 14 crop species; 26 disease/healthy classes | CNN classifier | **99.35% held-out accuracy** | Foundational benchmark using controlled images. [Source](https://doi.org/10.3389/fpls.2016.01419) |
+| Greenhouse tomato-virus images captured by mobile phone | SE-YOLOv5 | **91.07% test accuracy** and **94.10% mAP@0.5** | Accuracy and mean average precision are different metrics. [Source](https://doi.org/10.1016/j.compag.2022.106780) |
+| CottonWeedDet12: 5,648 field images, 12 weed classes and 9,370 bounding boxes | YOLOv4 / YOLOv3-tiny | **95.22% / 88.14% mAP@0.5** | Object-detection results, not classification accuracy. [Source](https://doi.org/10.1016/j.compag.2023.107655) |
+| Coffee-leaf biotic-stress images captured in natural scenes | U-Net / PSPNet / Mask R-CNN | **94.25% / 93.54% mIoU**; Mask R-CNN precision **73.90%**, recall **71.90%** | Different segmentation/detection metrics should not be treated as interchangeable. [Source](https://doi.org/10.1016/j.compag.2021.106191) |
+| AppleDisease5 | MEAN-SSD lightweight detector | **83.12% mAP**, **12.53 FPS** | Detection metric and speed, not classification accuracy. [Source](https://doi.org/10.1016/j.compag.2021.106379) |
+| Multi-source wheat-yield data from China | Random Forest using NIRv / EVI | NIRv: **R² = 0.74, RMSE = 758 kg/ha**; EVI: **R² = 0.73, RMSE = 762 kg/ha** | Regression metrics, not accuracy percentages. Same study for both configurations. [Source](https://doi.org/10.1016/j.compag.2022.106790) |
+| Paddy-rice irrigation control simulation | Deep Q-network (DQN) | **23 mm less irrigation** and **21 mm less drainage** in simulation | Simulated resource-use outcome, not accuracy or guaranteed field savings. [Source](https://doi.org/10.1016/j.agwat.2021.106838) |
 
-The website describes datasets and study settings reported by the cited publications. The original image, sensor, and farm-measurement datasets are **not bundled with this repository**, unless explicitly described as the synthetic demonstration data below.
-
-| Dataset or study data | What the source describes | How Fieldwise AI uses it |
-|---|---|---|
-| **PlantVillage** | A foundational plant-disease image dataset with 54,306 images covering 14 crop species and 26 disease/healthy classes, as described by Mohanty et al. (2016). | Literature catalogue context for plant-disease image classification. The raw images are not included. |
-| **Ferentinos (2018) plant-disease image corpus** | The publication reports 87,848 images spanning 25 plant species and 58 plant/disease classes. | Foundational literature context and source-linked reported result. The raw images are not included. |
-| **CottonWeedDet12** | Field-image benchmark described in the catalogue with 5,648 images, 12 weed classes, and 9,370 bounding-box annotations. | Research explorer and selected literature context; the original benchmark is not bundled. |
-| **Tomato virus disease images** | Study-specific greenhouse tomato images captured using a mobile phone, as described in the catalogue record for Qi et al. (2022). | Selected reported findings for the SE-YOLOv5 study; the full image dataset is not bundled. |
-| **Coffee leaf segmentation/instance images** | Smartphone images captured in natural scenes with varied backgrounds and lighting, as described by Tassis et al. (2021). | Selected paper findings and discussion of segmentation metrics; raw images are not bundled. |
-| **Wheat-yield and environmental data** | Multi-source crop-yield data described by Li et al. (2022), including remote-sensing vegetation indicators such as NIRv/EVI and environmental covariates. | A within-study comparison of two Random Forest configurations using the reported R² and RMSE. Raw data are not bundled. |
-| **Paddy-rice irrigation simulation** | A study-specific reinforcement-learning irrigation simulation described by Chen et al. | A contextual case study of reported simulated irrigation and drainage outcomes; no simulation engine or field dataset is bundled. |
-| **AppleDisease5** | Apple-leaf imagery covering five diseases, with simple and complex image backgrounds, as described in the catalogue. | Literature context for lightweight object detection; the original images are not bundled. |
-
-### Data that is actually included in the application
-
-- **Literature catalogue:** src/data/papers.ts contains the 58 catalogue records and their metadata, study notes, limitations, and DOI/publisher URLs.
-- **Selected quantitative chart values:** src/data/chartData.ts stores a limited set of values attributed to selected publications. The source-specific tooltips and notes are intended to keep the task, dataset, and metric context visible.
-- **Synthetic irrigation time series:** the irrigation visualisation in src/data/chartData.ts uses synthetic demonstration values. It is not a real farm measurement and must not be cited as evidence of actual water savings.
-- **Illustrative hero sensor and crop-index values:** values such as soil moisture, temperature, humidity, and the sample crop index are visual examples for the website layout, not live sensor feeds or verified agronomic recommendations.
-
-**Important:** This is a literature-exploration interface, not a dataset-training pipeline. The research datasets named above are referenced by the reviewed publications; the website does not claim to have downloaded, trained on, or independently reproduced every source dataset.
+### What is the accuracy of Fieldwise AI?
+**There is no single overall model-accuracy score for Fieldwise AI.** It is a research website and catalogue, not one trained prediction model evaluated on one dataset. When asked about performance, report the relevant original study's score and dataset. Do not claim 99.53% or 99.35% as the accuracy of this project.
 
 ## Technology stack
-
-- **React 18** — component-based website interface.
-- **TypeScript** — typed research data and UI components.
-- **Vite 6** — local development server and production bundling.
-- **Recharts** — interactive chart components.
-- **Lucide React** — interface icons.
-- **Vanilla CSS** — layout, theme tokens, responsive behaviour, and animations.
+| Area | Technology |
+|---|---|
+| Research website | React 18, TypeScript, Vite |
+| Charts | Recharts; Lucide React icons; custom CSS |
+| Catalogue / web chart data | TypeScript files in `src/data/` |
+| Companion dashboard | Python, Streamlit, pandas |
+| Streamlit catalogue snapshot | `streamlit_data/papers.json` |
+| Version control | Git and GitHub |
+| React hosting option | Vercel or another Vite-compatible static host |
+| Dashboard hosting | Streamlit Community Cloud |
 
 ## Project structure
+```text
+.
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.ts
+├── tsconfig.json
+├── vercel.json
+├── README.md
+├── requirements.txt
+├── streamlit_app.py
+├── streamlit_data/
+│   └── papers.json
+├── .streamlit/
+│   └── config.toml
+└── src/
+    ├── App.tsx
+    ├── main.tsx
+    ├── data/
+    │   ├── papers.ts
+    │   ├── chartData.ts
+    │   └── images.ts
+    ├── styles/
+    │   ├── tokens.css
+    │   └── animations.css
+    └── components/
+        ├── AccuracySummary.tsx
+        ├── AccuracySummary.css
+        ├── DataVisualisation.tsx
+        ├── ResearchExplorer.tsx
+        ├── Architecture.tsx
+        ├── CaseStudies.tsx
+        ├── ChallengesFuture.tsx
+        ├── Methodology.tsx
+        ├── Applications.tsx
+        ├── ResearchProof.tsx
+        ├── AboutSection.tsx
+        ├── Nav.tsx
+        └── Footer.tsx
+```
 
-    .
-    ├── index.html
-    ├── package.json
-    ├── package-lock.json
-    ├── tsconfig.json
-    ├── vite.config.ts
-    ├── public/
-    │   ├── favicon.svg
-    │   └── fonts/
-    └── src/
-        ├── main.tsx
-        ├── App.tsx
-        ├── App.css
-        ├── data/
-        │   ├── papers.ts
-        │   ├── chartData.ts
-        │   └── images.ts
-        ├── styles/
-        │   ├── tokens.css
-        │   └── animations.css
-        └── components/
-            ├── Nav.tsx / Nav.css
-            ├── Hero.tsx / Hero.css
-            ├── ResearchProof.tsx / ResearchProof.css
-            ├── Applications.tsx / Applications.css
-            ├── DataVisualisation.tsx / DataVisualisation.css
-            ├── Architecture.tsx / Architecture.css
-            ├── ResearchExplorer.tsx / ResearchExplorer.css
-            ├── ChallengesFuture.tsx / ChallengesFuture.css
-            ├── CaseStudies.tsx / CaseStudies.css
-            ├── Methodology.tsx / Methodology.css
-            ├── AboutSection.tsx / AboutSection.css
-            └── Footer.tsx / Footer.css
+## Run the React website
+Prerequisites: Node.js 18+ and npm.
 
-## Run locally
-
-### Prerequisites
-
-- Node.js 18 or later (a current LTS release is recommended)
-- npm 9 or later
-
-### Installation
-
-Clone the repository and enter the project directory:
-
-~~~bash
-git clone https://github.com/Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions.git
-cd Role-of-AI-in-Smart-Agriculture-Solutions
-~~~
-
-Install the locked dependency versions:
-
-~~~bash
+```bash
 npm ci
-~~~
-
-Run the TypeScript check:
-
-~~~bash
-npm run typecheck
-~~~
-
-Start the development server:
-
-~~~bash
 npm run dev
-~~~
+```
 
-Vite will print the local address, usually http://localhost:5173.
+The local Vite website normally opens at `http://localhost:5173`. To type-check and create a production build:
 
-Build and preview the production bundle:
-
-~~~bash
+```bash
+npm run typecheck
 npm run build
 npm run preview
-~~~
+```
 
-The production bundle is written to dist/. The dist/ directory and node_modules/ should not be committed to GitHub.
+## Run the Streamlit dashboard
+Prerequisites: Python 3.10+ and pip.
 
-## Deploy the website
+macOS / Linux:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
 
-The project is a standard React + Vite static website and can be deployed on **Vercel** or **Netlify**.
+Windows PowerShell:
+```powershell
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
 
-### Vercel
+Streamlit normally opens at `http://localhost:8501`. It reads its catalogue snapshot from `streamlit_data/papers.json`. If `src/data/papers.ts` changes, update the JSON export so both applications stay in sync.
 
-1. Open https://vercel.com/ and sign in with the GitHub account that can access this repository.
-2. Import Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions.
-3. Select **Vite** as the framework preset if it is not detected automatically.
-4. Use these settings:
-   - **Build command:** npm run build
-   - **Output directory:** dist
-   - **Install command:** npm ci
-5. Deploy and open the generated website URL.
+## Deploy the Streamlit dashboard
+- **Repository:** `Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions`
+- **Branch:** `main`
+- **Main file path:** `streamlit_app.py`
 
-### Netlify
+Sign in at [Streamlit Community Cloud](https://share.streamlit.io/), select **Create app**, choose this repository, branch `main`, and entry point `streamlit_app.py`, then select **Deploy**. Pushes to the configured branch can trigger redeployment. Check app settings and build logs if deployment does not update. See the [official Streamlit deployment guide](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy).
 
-Create a new site from the same GitHub repository, set the build command to npm run build, and set the publish directory to dist.
-
-No environment variables or API keys are required for the current static research website. A successful production deployment should still be confirmed by the hosting build logs before sharing the link.
+## Deploy the React website
+The React/Vite website can be deployed separately. For example, import the repository into [Vercel](https://vercel.com/) with build command `npm run build` and output directory `dist`. The Vercel site and Streamlit dashboard are different applications hosted at different URLs.
 
 ## Group members
-
 | No. | Name | Student ID |
 |---:|---|---|
 | 1 | GAYATHRI SAI TAPASWINI IRAGAVARAPU | I26043735 |
@@ -196,23 +183,10 @@ No environment variables or API keys are required for the current static researc
 | 5 | Vishnu Vardhan Chilakacharla | I26043592 |
 
 ## Research limitations and academic integrity
-
-- The catalogue includes 55 core records dated 2021–2026 and 3 foundational records. These counts describe the current catalogue and do not prove that every candidate paper was found or screened exhaustively.
-- Publisher DOI links are included for checking the original publications. Not every dataset detail, metric, finding, and limitation in the catalogue has been independently verified against the full text of every paper.
-- Reported values from different studies can use different datasets, tasks, test protocols, and metrics. For example, accuracy, mean average precision (mAP), mean intersection over union (mIoU), precision, recall, R², and RMSE are not interchangeable.
-- Synthetic irrigation values and illustrative hero values are visual demo content only. Do not report them as observed farm data or measured water savings.
-- This repository does not currently implement or deploy trained ML models, a live IoT sensor connection, or a live crop-monitoring service. It explains and visualises selected research evidence.
-- Before submitting academic work, group members should read and verify the original sources for the claims they cite, make sure they understand the analysis, follow the course's citation requirements, and declare AI assistance in accordance with university policy.
-
-## Selected source links
-
-- Li et al. (2022), wheat-yield prediction: https://doi.org/10.1016/j.compag.2022.106790
-- Qi et al. (2022), tomato virus detection: https://doi.org/10.1016/j.compag.2022.106780
-- Tassis et al. (2021), coffee leaf segmentation/detection: https://doi.org/10.1016/j.compag.2021.106191
-- Chen et al., paddy-rice irrigation reinforcement learning: https://doi.org/10.1016/j.agwat.2021.106838
-- Ferentinos (2018), plant-disease image classification: https://doi.org/10.1016/j.compag.2018.01.009
-- Mohanty et al. (2016), PlantVillage image classification: https://doi.org/10.3389/fpls.2016.01419
-
----
-
-**Fieldwise AI** · PRG4206 Machine Learning · INTI International University
+- The catalogue is curated; it is not presented as an exhaustive systematic review with fully verified full-text extraction for every entry.
+- The 55 core and 3 foundational records are catalogue counts, not proof that every result and reference field has been verified.
+- Raw source datasets from the cited papers are not included; the applications show dataset descriptions and selected published findings.
+- The React irrigation time series is explicitly synthetic demonstration data, not farm-measured data.
+- Accuracy, mAP, mIoU, precision, recall, R² and RMSE measure different outcomes. Compare like-for-like metrics only when evaluation conditions allow it.
+- Results from controlled image datasets may not transfer directly to real fields, different crops or seasons.
+- Check original papers, cite sources consistently, and follow the assignment's rules for AI acknowledgements. The final analysis must reflect the group's own reading and understanding.

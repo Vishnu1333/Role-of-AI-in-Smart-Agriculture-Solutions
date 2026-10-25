@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import ResearchProof from './components/ResearchProof'
+import AccuracySummary from './components/AccuracySummary'
 import Applications from './components/Applications'
 import DataVisualisation from './components/DataVisualisation'
 import Architecture from './components/Architecture'
@@ -56,6 +57,7 @@ export default function App() {
       <main>
         <Hero />
         <ResearchProof />
+        <AccuracySummary />
         <Applications />
         <DataVisualisation />
         <Architecture />

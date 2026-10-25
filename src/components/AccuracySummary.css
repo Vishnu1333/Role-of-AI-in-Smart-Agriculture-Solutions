@@ -1,0 +1,29 @@
+/* Dataset performance summary — aligned with Fieldwise's dark editorial UI */
+.accuracy-summary{position:relative;background:var(--color-bg-2);overflow:hidden}
+.accuracy-summary__header{text-align:center;max-width:850px;margin:0 auto var(--space-10,2.5rem)}
+.accuracy-summary__title{font-family:var(--font-display);font-size:var(--text-4xl);line-height:1.2;margin-top:var(--space-4)}
+.accuracy-summary__subtitle{margin-top:var(--space-4);font-size:var(--text-lg);color:var(--color-text-muted);line-height:1.75}
+.accuracy-summary__answer{display:flex;gap:var(--space-4);align-items:flex-start;max-width:960px;margin:0 auto var(--space-8);padding:var(--space-6);border:1px solid rgba(255,98,61,.28);background:linear-gradient(120deg,rgba(255,98,61,.09),rgba(139,92,246,.09));border-radius:var(--radius-lg);color:var(--color-text-2)}
+.accuracy-summary__answer>svg{flex:0 0 auto;color:var(--color-orange-400);margin-top:2px}
+.accuracy-summary__answer strong{display:block;color:var(--color-text);margin-bottom:var(--space-2)}
+.accuracy-summary__answer p{font-size:var(--text-sm);line-height:1.75}
+.accuracy-summary__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5,1.25rem)}
+.accuracy-summary__card{display:flex;flex-direction:column;align-items:flex-start;padding:var(--space-6);border-radius:var(--radius-xl);border:1px solid var(--color-border);background:var(--color-surface);min-width:0;gap:var(--space-3);transition:transform var(--transition-base),border-color var(--transition-base),box-shadow var(--transition-base)}
+.accuracy-summary__card:hover{transform:translateY(-3px);border-color:rgba(139,92,246,.35);box-shadow:var(--shadow-card-hover)}
+.accuracy-summary__card-top{width:100%;display:flex;align-items:center;justify-content:space-between;gap:var(--space-3)}
+.accuracy-summary__tag{display:inline-flex;padding:4px 9px;border-radius:var(--radius-full);font-size:var(--text-xs);line-height:1.4;border:1px solid var(--color-border);color:var(--color-text-2);background:rgba(255,255,255,.04)}
+.accuracy-summary__tag--accuracy{border-color:rgba(74,222,128,.35);color:var(--color-green-400)}
+.accuracy-summary__tag--detection{border-color:rgba(167,139,250,.38);color:var(--color-violet-400)}
+.accuracy-summary__tag--regression{border-color:rgba(96,165,250,.38);color:#93c5fd}
+.accuracy-summary__tag--simulation{border-color:rgba(255,120,71,.38);color:var(--color-orange-400)}
+.accuracy-summary__year{color:var(--color-text-dim);font-size:var(--text-xs);flex:0 0 auto}
+.accuracy-summary__dataset{display:flex;align-items:flex-start;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-text-2);font-weight:600;line-height:1.5}
+.accuracy-summary__dataset svg{flex:0 0 auto;color:var(--color-orange-400);margin-top:2px}
+.accuracy-summary__score{font-family:var(--font-display);font-size:clamp(1.7rem,3vw,2.45rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--color-text);overflow-wrap:anywhere}
+.accuracy-summary__metric{color:var(--color-orange-400);font-size:var(--text-sm);font-weight:600}
+.accuracy-summary__details{color:var(--color-text-muted);font-size:var(--text-sm);line-height:1.7}
+.accuracy-summary__details strong{color:var(--color-text-2)}
+.accuracy-summary__source{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);color:var(--color-violet-400);margin-top:auto;padding-top:var(--space-2)}
+.accuracy-summary__source:hover{color:var(--color-orange-400)}
+.accuracy-summary__note{max-width:1000px;margin:var(--space-8) auto 0;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);color:var(--color-text-dim);font-size:var(--text-sm);line-height:1.8;text-align:center;background:rgba(18,16,58,.45)}
+@media(max-width:760px){.accuracy-summary__title{font-size:var(--text-3xl)}.accuracy-summary__grid{grid-template-columns:1fr}.accuracy-summary__answer{padding:var(--space-4)}}
