@@ -1,141 +1,200 @@
 # Fieldwise AI — Role of AI in Smart Agriculture Solutions
 
-> **Flowjam-inspired Research Web Platform**  
-> **Course:** PRG4206 — Machine Learning  
+> **PRG4206 — Machine Learning · Group Research Project**  
 > **Institution:** INTI International University  
-> **Project Type:** Research-Based Machine Learning Group Assignment (2021–2026 Literature Synthesis)
+> **Research window:** 2021–2026, with three separately marked foundational sources  
+> **Technology:** Streamlit research dashboard + React/Vite interactive website
+
+Fieldwise AI explores how artificial intelligence and machine learning can support smart agriculture through crop and livestock prediction, computer-vision monitoring, resource optimisation, connected farm systems, and responsible deployment.
+
+This repository contains **two interfaces for the same research project**:
+
+- **Streamlit dashboard (Python):** a research-focused app for exploring the literature catalogue, filtering by year and focus area, reviewing selected study findings, and downloading filtered catalogue data as CSV.
+- **React/Vite website (TypeScript):** an interactive visual research website with architecture diagrams, research visualisations, application examples, case studies, a searchable literature explorer, and project methodology.
+
+The Streamlit app is a companion interface—not a conversion of the React website. Both interfaces use the Fieldwise AI research catalogue and communicate the limits of the evidence clearly.
 
 ---
 
-## 🌾 Project Overview
+## 🌱 What the project includes
 
-**Fieldwise AI** is an interactive, creative-tech research web platform exploring how machine learning transforms agricultural data into actionable insights for production prediction, disease detection, resource optimisation, and sustainable farming.
-
-Inspired by the visual design direction of [Flowjam](https://www.flowjam.com/), this platform combines:
-- **Bold Editorial Aesthetics**: Deep violet/dark indigo backgrounds, saturated purple mesh gradients, warm coral/orange accents, and oversized display typography (`Gelica` + `Craftworkgrotesk` webfonts).
-- **Interactive Data Storytelling**: 5 interactive Recharts-based research visualisations with tooltips, dynamic task filters, explicit non-equivalence caveats, and a clearly labelled synthetic irrigation series.
-- **Comparative Research Explorer**: A searchable, filterable catalogue of 55 core records dated 2021–2026 plus 3 foundational records (58 total), with expandable notes and CSV export. Inclusion and DOI presence do not imply every study-specific field has been verified from full text.
-- **System Architecture**: Labelled 7-stage data pipeline diagram contrasting edge computing with cloud infrastructure under real-world rural connectivity constraints.
-- **Evidence handling**: chart metrics are restricted to specific values located in linked publisher/source text; unsupported values are omitted or marked as not independently extracted. Synthetic irrigation readings are disclosed, and unlike metrics are not presented as one leaderboard.
+- **Five assignment focus areas:** smart-agriculture data and system architecture; crop and livestock production prediction; monitoring and detection; resource and operations optimisation; deployment, ethics, and future trends.
+- **Research catalogue:** 55 core catalogue records dated 2021–2026 and three foundational records (58 records total). These are curated catalogue records, not a claim that every field in every paper has been verified against the full text.
+- **Streamlit literature dashboard:** searchable and filterable records, focus-area and publication-year summaries, individual paper details, and filtered CSV export.
+- **Source-linked findings:** selected quantitative examples from cited studies. Metrics such as accuracy, mAP, mIoU, precision, recall, R², and RMSE are not interchangeable and should not be ranked as one universal leaderboard.
+- **Research visualisations:** the React website includes charts with source/context notes. Its irrigation time series is synthetic demonstration data, not measured farm data.
+- **Deployment and ethics discussion:** rural connectivity, data quality, model generalisability, farmer adoption, affordability, privacy, and equitable access.
+- **Academic transparency:** publisher links are included for checking. DOI presence does not by itself verify every author, title, dataset, metric, result, or limitation.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Run the Streamlit dashboard
 
-### Prerequisites
-- **Node.js**: v18.0.0 or later (use a current LTS release)
-- **npm**: v9.0.0 or later
+### Requirements
 
-### Installation & Run
+- Python 3.10 or later recommended
+- pip
+- The dependencies listed in **requirements.txt**
+
+### Install and start locally
+
+**macOS / Linux**
 
 ```bash
-# 1. Install exactly the dependencies recorded in the lockfile
+git clone https://github.com/Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions.git
+cd Role-of-AI-in-Smart-Agriculture-Solutions
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+streamlit run streamlit_app.py
+```
+
+**Windows PowerShell**
+
+```powershell
+git clone https://github.com/Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions.git
+cd Role-of-AI-in-Smart-Agriculture-Solutions
+
+py -m venv .venv
+.\\.venv\\Scripts\\Activate.ps1
+
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+streamlit run streamlit_app.py
+```
+
+Streamlit will show a local URL in the terminal, usually localhost port 8501.
+
+### Deploy on Streamlit Community Cloud
+
+1. Sign in at [Streamlit Community Cloud](https://share.streamlit.io/) using the GitHub account with access to this repository.
+2. Choose **Create app**.
+3. Set the repository to **Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions**.
+4. Choose branch **main**.
+5. Set **Main file path** to **streamlit_app.py**.
+6. Select **Deploy** and wait for the build to finish.
+
+Deployment guide: [Streamlit Community Cloud documentation](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy).
+
+**Deployment status:** this repository contains the Streamlit entry point and configuration. A live Streamlit URL should only be shared after the app has been deployed successfully from the project owner's Streamlit account.
+
+---
+
+## 🖥️ Run the React/Vite website
+
+The original interactive website remains available separately from the Streamlit dashboard.
+
+### Requirements
+
+- Node.js 18 or later (a current LTS release is recommended)
+- npm 9 or later
+
+```bash
 npm ci
-
-# 2. Start the local development server (with HMR)
 npm run dev
+```
 
-# 3. Build for production (TypeScript check + Vite bundle)
+Vite normally serves the website at localhost port 5173.
+
+Useful additional commands:
+
+```bash
+npm run typecheck
 npm run build
-
-# 4. Preview the production build locally
 npm run preview
 ```
 
-The application will be served at `http://localhost:5173/` (dev) or `http://localhost:4173/` (preview).
+The production build has not been certified by this README alone. Run the commands in your target environment and address any errors returned by the build.
 
 ---
 
-## 🏛️ Project Architecture & Marking Criteria Alignment
+## 🧭 Streamlit dashboard guide
 
-The application directly addresses the 5 core assignment marking areas specified for **PRG4206 Machine Learning**:
+The Python dashboard is in **streamlit_app.py** and has four main tabs:
 
-| Assignment Section | Web Component | Academic Focus |
+1. **Overview** — catalogue counts, focus areas, and records by publication year.
+2. **Literature Explorer** — keyword search, year and category filters, full catalogue fields, source links, and CSV download.
+3. **Selected Findings** — selected source-linked study results with cautions about metric and dataset comparability.
+4. **Team & Notes** — project context, group member details, and research evidence notes.
+
+The source catalogue is exported to **streamlit_data/papers.json** for the Streamlit app. The React website uses **src/data/papers.ts**. When the catalogue changes, keep these two data sources synchronised.
+
+---
+
+## 🧭 Research scope and marking-criteria alignment
+
+| Assignment focus area | Where it is covered | Main questions |
 |---|---|---|
-| **1. Smart Agriculture Data & System Architecture** | [`src/components/Architecture.tsx`](src/components/Architecture.tsx) | Multi-source ingestion (IoT, UAV, Sentinel-2), edge vs. cloud computing, rural bandwidth constraints, data cleaning & feature engineering. |
-| **2. Crop & Livestock Production Prediction** | [`src/components/Applications.tsx`](src/components/Applications.tsx) & [`src/components/DataVisualisation.tsx`](src/components/DataVisualisation.tsx) | A within-study comparison of Random Forest wheat-yield results using NIRv and EVI (R² and RMSE; both rows cite the same Li et al. study). |
-| **3. Monitoring & Detection** | [`src/components/Applications.tsx`](src/components/Applications.tsx) & [`src/components/CaseStudies.tsx`](src/components/CaseStudies.tsx) | CNNs and YOLOv5 drone pest detection. Discussion of potential lab-to-field generalisation limits under different backgrounds, lighting, and field conditions; no single universal drop percentage is asserted. |
-| **4. Resource & Operations Optimisation** | [`src/components/DataVisualisation.tsx`](src/components/DataVisualisation.tsx) | Smart irrigation scheduling from soil moisture sensors & evapotranspiration models (clearly labelled synthetic demonstration data). |
-| **5. Deployment, Ethics, & Future Trends** | [`src/components/ChallengesFuture.tsx`](src/components/ChallengesFuture.tsx) & [`src/components/ResearchExplorer.tsx`](src/components/ResearchExplorer.tsx) | Federated learning for multi-farm collaboration without raw data pooling, agricultural digital twins, robotics, and smallholder adoption hurdles. |
+| Smart Agriculture Data & System Architecture | Streamlit catalogue, React Architecture section | How do sensors, IoT, cloud/edge systems, drones, and farm records become usable model inputs? |
+| Crop & Livestock Production Prediction | Streamlit Selected Findings, React Applications and Data Visualisation | How are production outcomes predicted, which metrics are used, and how well do results generalise? |
+| Monitoring & Detection | Streamlit Selected Findings, React case studies and catalogue | How are disease, weeds, and crop conditions detected with vision or sensor data? |
+| Resource & Operations Optimisation | Streamlit Selected Findings, React visualisations and case studies | How can ML support irrigation, inputs, scheduling, and farm operations? |
+| Deployment, Ethics & Future Trends | Streamlit Team & Notes, React Challenges & Future section | What limits adoption, fairness, privacy, affordability, and field deployment? |
 
 ---
 
-## 📊 Interactive Data Visualisations
+## 📁 Repository structure
 
-1. **Selected Published Metrics**: Horizontal bars show individual results with source details. The R² row is scaled for display; each tooltip states the true metric, and cross-task values are not a leaderboard.
-2. **Crop Yield Prediction**: A same-study comparison of Random Forest wheat-yield results using NIRv and EVI; RMSE is shown only where the cited record provides it.
-3. **Plant Disease & Pest Detection**: Bars show source-specific reported metrics such as mAP, mIoU, precision, recall, and accuracy. These measures are not interchangeable and should not be ranked together.
-4. **Smart Irrigation Monitoring**: Multi-axis time-series chart showing soil moisture dynamics, rainfall events, evapotranspiration rates, and automated irrigation triggers (*clearly designated with a prominent synthetic demo banner*).
-5. **Research Landscape Trio**: Dynamic breakdown of catalogue records by agricultural application, publication year, and model family; counts are not a measure of full-text verification.
-
----
-
-## 📂 Project Structure
-
-```
+```text
 .
-├── index.html                     # HTML5 entry with Flowjam typography (Gelica, Craftworkgrotesk)
-├── package.json                   # Dependencies: React 18, Recharts, Lucide-React
-├── vite.config.ts                 # Vite bundler configuration with @ alias
-├── tsconfig.json                  # Strict TypeScript compiler options
+├── streamlit_app.py                 # Python/Streamlit research dashboard
+├── requirements.txt                 # Streamlit dependency
+├── streamlit_data/
+│   └── papers.json                  # Catalogue data read by Streamlit
+├── .streamlit/
+│   └── config.toml                  # Streamlit theme configuration
+├── STREAMLIT_DEPLOYMENT.md          # Community Cloud deployment notes
+├── index.html                       # React/Vite website entry point
+├── package.json                     # JavaScript dependencies and scripts
+├── package-lock.json                # Locked JavaScript dependency tree
+├── vite.config.ts                   # Vite configuration
+├── tsconfig.json                    # TypeScript configuration
+├── public/                          # Icons and web-font assets
 └── src/
-    ├── main.tsx                   # Application bootstrap
-    ├── App.tsx                    # Master layout with IntersectionObserver reveals & hash navigation
-    ├── App.css                    # Base layout container rules
+    ├── main.tsx                     # React bootstrap
+    ├── App.tsx                      # Main website layout
     ├── data/
-    │   ├── papers.ts              # 55 core records dated 2021–2026 + 3 foundational records (58 total; citation fields should be checked at the publisher source before use)
-    │   ├── chartData.ts           # Dynamic landscape aggregation & grounded empirical benchmarks
-    │   └── images.ts              # Centralized high-res image registry with fallbacks
-    ├── styles/
-    │   ├── tokens.css             # Flowjam-inspired CSS custom properties & design tokens
-    │   └── animations.css         # Keyframes (meshFloat, pulseGlow, reveals) + prefers-reduced-motion
-    └── components/
-        ├── Nav.tsx (.css)         # Sticky blurred header with active scroll spy & rotating star CTA
-        ├── Hero.tsx (.css)        # High-impact hero with floating telemetry & mini CSS charts
-        ├── ResearchProof.tsx (.css) # Editorial statistic callouts with publisher links
-        ├── Applications.tsx (.css)# Alternating 5-application showcase cards
-        ├── DataVisualisation.tsx (.css) # 5 Recharts data visualisations (dynamic counts + synthetic-data banner)
-        ├── Architecture.tsx (.css)# Labelled 7-stage ML pipeline & edge/cloud breakdown
-        ├── ResearchExplorer.tsx (.css) # Searchable table, filter pills, expandable rows & CSV export
-        ├── ChallengesFuture.tsx (.css) # 2-column deployment hurdles vs. emerging frontiers
-        ├── CaseStudies.tsx (.css) # 3 in-depth study-specific case studies with publisher links
-        ├── Methodology.tsx (.css) # 6-step review protocol & 6-item interactive FAQ
-        ├── AboutSection.tsx (.css)# PRG4206 assignment context & INTI International University info
-        └── Footer.tsx (.css)      # Academic copyright, quick links, and citation disclaimer
+    │   ├── papers.ts                # React literature catalogue
+    │   ├── chartData.ts             # Source-linked chart records and summaries
+    │   └── images.ts                # Website image references
+    ├── styles/                      # Design tokens and animations
+    └── components/                  # Website sections and visualisations
 ```
 
 ---
 
-## 📜 Citations, Bibliographic Verification & Academic Integrity
+## 📚 Evidence quality and academic integrity
 
-- **55 Core Catalogue Records (2021–2026)**: The current catalogue has 11 records assigned to each of the 5 module syllabus areas. This is a category count, not proof that every study-specific finding or metric has been verified from full text:
-  1. *Smart Agriculture Data & System Architecture* (11 records)
-  2. *Crop & Livestock Production Prediction* (11 records)
-  3. *Monitoring & Detection* (11 records)
-  4. *Resource & Operations Optimisation* (11 records)
-  5. *Deployment, Ethics, & Future Trends* (11 records)
-- **3 Foundational Benchmark Papers**: Seminal historical baselines (Ferentinos 2018, Mohanty et al. 2016, Liakos et al. 2018) are separately identified (`isFoundational: true`) and excluded from the 2021–2026 quota.
-- **Bibliographic verification status**: Publisher DOI links are supplied for catalogue follow-up. This archive does not claim every author/title/year/venue field, dataset description, model detail, metric, finding, and limitation has been independently verified from each full text. Check the original publisher record and paper before using a claim in the final report.
-- **Synthetic Data Transparency**: The 30-day irrigation time-series is explicitly flagged as illustrative synthetic demonstration data with prominent warning banners to maintain strict scientific transparency.
-- **No Inappropriate Leaderboards**: Cross-dataset comparisons are strictly contextualized with original experimental boundaries and data sources rather than artificial single-ranking leaderboards.
+- The catalogue contains 55 core records dated 2021–2026 and three foundational records, for 58 records in total. The core catalogue has 11 entries assigned to each of the five focus areas; this is a structural count, not proof of exhaustive screening or full-text validation.
+- Publisher DOI links are provided to help readers check original sources. Verify the original paper before citing any study-specific statement.
+- Review articles and conceptual papers do not receive invented empirical scores. Where study details have not been independently extracted, the catalogue says so.
+- The wheat-yield example compares two configurations reported in one study. Other model metrics may refer to different tasks or datasets and should not be treated as directly comparable.
+- The React irrigation time series is **synthetic demonstration data**, not farm-measured evidence. It must not be described as actual farm performance or proven water savings.
+- Before academic submission, the group should read and verify the primary papers used in the final report and ensure all claims are correctly cited.
+- Use AI tools only within the course's responsible-AI policy. Acknowledge assistance accurately and make sure the group understands and can explain the work.
 
-## Evidence and Validation Status
+---
 
-- The research explorer contains **55 core catalogue records dated 2021–2026 and 3 foundational records**. The current assignment-area distribution of the 55 core records is 11 per area. These counts are catalogue metadata only, not a claim of exhaustive screening or full-text verification.
-- Publisher DOI links are provided as starting points for checking bibliographic metadata. This count does not certify every abstract summary, dataset, model-family label, metric, finding, or limitation. Where details were not extracted, the record should say so rather than fill the gap with an estimate.
-- The chart dataset includes a small, explicitly selected set of quantitative findings traceable to publisher/source text. Cross-study values use different tasks and metrics and must not be compared as one leaderboard.
-- The irrigation time series is synthetic demonstration data, not a farm measurement.
-- Before academic submission, the group should inspect each full paper it cites, record search/screening details, and verify every empirical claim used in the report.
-- Build status for this archive is environment-dependent. Use `npm ci` followed by `npm run build` in the target environment; do not rely on a pre-packed `node_modules` directory.
+## 👥 Group members
 
+- **GAYATHRI SAI TAPASWINI IRAGAVARAPU** — I26043735
+- **MOHAN MEKALA** — I26043589
+- **Uma Maheshwari Srinivasan** — I26044266
+- **Takunda Godwell Mushure** — I25029962
+- **Vishnu Vardhan Chilakacharla** — I26043592
 
-## Optional Streamlit Community Cloud Dashboard
+---
 
-This repository now includes a Python/Streamlit companion for exploring the same smart-agriculture literature catalogue. The original interactive website remains the React/Vite application.
+## 🔗 Project resources
 
-- Entrypoint: [streamlit_app.py](streamlit_app.py)
-- Dependencies: [requirements.txt](requirements.txt)
-- Companion data export: [streamlit_data/papers.json](streamlit_data/papers.json)
-- Deployment instructions: [STREAMLIT_DEPLOYMENT.md](STREAMLIT_DEPLOYMENT.md)
-
-Deploy the companion app from [Streamlit Community Cloud](https://share.streamlit.io/) using repository Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions, branch main, and main file path streamlit_app.py. See the deployment guide for details. The live deployment must be created from the repository owner's Streamlit account.
+- [GitHub repository](https://github.com/Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions)
+- [Streamlit Community Cloud](https://share.streamlit.io/)
+- [Streamlit deployment documentation](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy)
+- [Research audit status](AUDIT_STATUS.md)
+- [Group presentation](Fieldwise_AI_Smart_Agriculture_Group_Presentation.pptx)
+- [Streamlit deployment notes](STREAMLIT_DEPLOYMENT.md)
