@@ -22,7 +22,7 @@ The project’s core question is:
 
 ## 2. Application and Deployment
 
-The presentation version is the **React + Vite web application deployed through Vercel**. This repository does not use Streamlit as its application interface.
+The presentation version is the **React + Vite web application**, prepared for deployment through Vercel.
 
 - **Frontend:** React 18 with TypeScript
 - **Build tool and development server:** Vite
