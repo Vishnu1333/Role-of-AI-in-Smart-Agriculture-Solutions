@@ -62,6 +62,33 @@ The site links these areas through a labelled data-pipeline diagram, selected ca
 - **Responsive interface:** Editorial-style layouts and animations, with consideration for reduced-motion preferences.
 - **Group presentation:** The repository includes [the Fieldwise AI group presentation](Fieldwise_AI_Smart_Agriculture_Group_Presentation.pptx).
 
+
+## Output Images and Visual Results
+
+The SVG output figures below are committed in [`outputs/images/`](outputs/images/) so they can be viewed directly on GitHub. They are generated from catalogue metadata or selected values reported in cited studies; they are not results from a new model trained by this project.
+
+### Catalogue coverage
+
+![Catalogue records by focus area](outputs/images/catalogue_by_focus.svg)
+
+![Catalogue records by year](outputs/images/catalogue_by_year.svg)
+
+### Selected study-level results
+
+![Wheat-yield comparison within the same study](outputs/images/wheat_yield_same_study.svg)
+
+![Selected study-level vision metrics in task-specific panels](outputs/images/selected_study_metrics.svg)
+
+### Data and application architecture
+
+![Named datasets and data contexts](outputs/images/dataset_inventory_and_status.svg)
+
+![Fieldwise AI React/Vite architecture](outputs/images/project_architecture.svg)
+
+![Conceptual smart-agriculture data pipeline](outputs/images/smart_agriculture_pipeline.svg)
+
+For captions, source boundaries, and usage notes, see [`outputs/README.md`](outputs/README.md).
+
 ## 5. Datasets and Research Data Used
 
 ### How data is implemented
@@ -120,6 +147,9 @@ References for these examples are linked in the application and should be checke
 ├── package-lock.json
 ├── tsconfig.json
 ├── vite.config.ts
+├── outputs/
+│   ├── README.md
+│   └── images/                 # SVG research output figures for README/report
 ├── public/
 │   ├── favicon.svg
 │   └── fonts/
