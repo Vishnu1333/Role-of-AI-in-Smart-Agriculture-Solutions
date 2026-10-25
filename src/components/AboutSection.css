@@ -1,0 +1,186 @@
+/* ============================================================
+   AboutSection — Editorial about / project info section
+   ============================================================ */
+
+.about-section {
+  position: relative;
+  background: var(--color-bg-2);
+  overflow: hidden;
+}
+
+/* Subtle gradient backdrop */
+.about-section::before {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  right: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ---- Layout ---- */
+.about-section__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+/* ---- Text side ---- */
+.about-section__text .section-label {
+  margin-bottom: var(--space-6);
+}
+
+.about-section__title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: var(--space-6);
+  color: var(--color-text);
+}
+
+.about-section__body {
+  margin-top: var(--space-6);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.about-section__body + .about-section__body {
+  margin-top: var(--space-4);
+}
+
+/* ---- Info card ---- */
+.about-section__info-card {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  overflow: hidden;
+
+  /* Gradient border effect via pseudo-element */
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.about-section__info-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.4),
+    rgba(249, 115, 22, 0.3),
+    rgba(139, 92, 246, 0.15)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.about-section__info-header {
+  margin-bottom: var(--space-6);
+}
+
+.about-section__info-badge {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-orange-400);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  border-radius: var(--radius-full);
+  background: rgba(249, 115, 22, 0.08);
+}
+
+/* ---- Info grid ---- */
+.about-section__info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about-section__info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.about-section__info-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--color-violet-400);
+  margin-top: 2px;
+}
+
+.about-section__info-label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+}
+
+.about-section__info-value {
+  display: block;
+  font-size: var(--text-base);
+  color: var(--color-text);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* ---- Note ---- */
+.about-section__note {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  color: var(--color-text-dim);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 768px) {
+  .about-section__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .about-section__title {
+    font-size: var(--text-3xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section__info-card {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .about-section__title {
+    font-size: var(--text-2xl);
+  }
+}

@@ -1,0 +1,1289 @@
+// ============================================================
+// FIELDWISE AI — Smart Agriculture Literature Catalogue
+// PRG4206 Machine Learning — INTI International University
+// Core window: 2021–2026; foundational items are marked separately.
+// ============================================================
+// Publisher links are supplied for bibliographic follow-up. This catalogue
+// does not claim that every dataset, metric, finding, and limitation has
+// been independently checked against the full text of every publication.
+// ============================================================
+
+export interface ResearchPaper {
+  id: string;
+  title: string;
+  authors: string;
+  year: number;
+  application: string;
+  modelFamily: string;
+  dataset: string;
+  metric: string;
+  mainFinding: string;
+  limitation: string;
+  doi: string;
+  url: string;
+  summary: string;
+  tags: string[];
+  isFoundational?: boolean;
+  venue?: string;
+}
+
+export const researchPapers: ResearchPaper[] = [
+  {
+    "id": "p1",
+    "title": "Drones in agriculture: A review and bibliometric analysis",
+    "authors": "Rejeb, A., Abdollahi, A., Rejeb, K., Treiblmaier, H.",
+    "year": 2022,
+    "application": "Smart Agriculture Data & System Architecture",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Drones in agriculture: A review and bibliometric analysis; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.compag.2022.107017",
+    "url": "https://doi.org/10.1016/j.compag.2022.107017",
+    "summary": "Review article: Drones in agriculture: A review and bibliometric analysis (2022). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "drone",
+      "uav"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p2",
+    "title": "Introducing digital twins to agriculture",
+    "authors": "Pylianidis, C., Osinga, S., Athanasiadis, I.",
+    "year": 2021,
+    "application": "Smart Agriculture Data & System Architecture",
+    "modelFamily": "Conceptual framework / system design",
+    "dataset": "Not applicable — conceptual or system-framework paper; no single benchmark dataset is asserted in this catalogue.",
+    "metric": "Not applicable — conceptual/framework paper.",
+    "mainFinding": "Presents or discusses a framework related to Introducing digital twins to agriculture; no numerical predictive-performance result is asserted here.",
+    "limitation": "Framework-level findings require validation in specific agricultural settings. No universal model-performance score can be inferred from the bibliographic record alone.",
+    "doi": "10.1016/j.compag.2020.105942",
+    "url": "https://doi.org/10.1016/j.compag.2020.105942",
+    "summary": "Conceptual/system paper: Introducing digital twins to agriculture (2021). This catalogue does not assign an empirical benchmark score unless it is documented in the original publication.",
+    "tags": [
+      "twin"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p3",
+    "title": "Data-driven decision support in livestock farming for improved animal health, welfare and greenhouse gas emissions: Overview and challenges",
+    "authors": "Niloofar, P., Francis, D., Lazarova-Molnar, S., Vulpe, A., Vochin, M., Suciu, G. et al.",
+    "year": 2021,
+    "application": "Smart Agriculture Data & System Architecture",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Data-driven decision support in livestock farming for improved animal health, welfare and greenhouse gas emissions: Overview and challenges; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.compag.2021.106406",
+    "url": "https://doi.org/10.1016/j.compag.2021.106406",
+    "summary": "Review article: Data-driven decision support in livestock farming for improved animal health, welfare and greenhouse gas emissions: Overview and challenges (2021). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "precision farming",
+      "machine learning",
+      "smart agriculture"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p4",
+    "title": "Artificial Neural Networks in Agriculture, the core of artificial intelligence: What, When, and Why",
+    "authors": "Castillo-Girones, S., Munera, S., Martínez-Sober, M., Blasco, J., Cubero, S., Gómez-Sanchis, J.",
+    "year": 2025,
+    "application": "Smart Agriculture Data & System Architecture",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Artificial Neural Networks in Agriculture, the core of artificial intelligence: What, When, and Why; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.compag.2025.109938",
+    "url": "https://doi.org/10.1016/j.compag.2025.109938",
+    "summary": "Review article: Artificial Neural Networks in Agriculture, the core of artificial intelligence: What, When, and Why (2025). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "disease"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p5",
+    "title": "5G in agri-food - A review on current status, opportunities and challenges",
+    "authors": "van Hilten, M., Wolfert, S.",
+    "year": 2022,
+    "application": "Smart Agriculture Data & System Architecture",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on 5G in agri-food - A review on current status, opportunities and challenges; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.compag.2022.107291",
+    "url": "https://doi.org/10.1016/j.compag.2022.107291",
+    "summary": "Review article: 5G in agri-food - A review on current status, opportunities and challenges (2022). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "drone",
+      "iot"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p6",
+    "title": "Virtual reality-based digital twins for greenhouses: A focus on human interaction",
+    "authors": "Slob, N., Hurst, W., van de Zedde, R., Tekinerdogan, B.",
+    "year": 2023,
+    "application": "Smart Agriculture Data & System Architecture",
+    "modelFamily": "Digital twins / human-computer interaction",
+    "dataset": "Study-specific virtual-reality/digital-twin interaction setting; detailed sample information not extracted in this audit.",
+    "metric": "Human-interaction/usability outcomes; no ML accuracy metric is asserted.",
+    "mainFinding": "Studies human interaction with a virtual-reality-based greenhouse digital twin.",
+    "limitation": "Study-specific participant numbers and evaluation conditions must be taken from the full paper before drawing general conclusions.",
+    "doi": "10.1016/j.compag.2023.107815",
+    "url": "https://doi.org/10.1016/j.compag.2023.107815",
+    "summary": "This paper examines human interaction with a VR-based greenhouse digital twin. Quantitative details have not been independently transcribed in this audit.",
+    "tags": [
+      "twin"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p7",
+    "title": "IoT-Agro: A smart farming system to Colombian coffee farms",
+    "authors": "Rodríguez, J., Montoya-Munoz, A., Rodriguez-Pabon, C., Hoyos, J., Corrales, J.",
+    "year": 2021,
+    "application": "Smart Agriculture Data & System Architecture",
+    "modelFamily": "IoT / systems architecture",
+    "dataset": "Colombian coffee-farm smart-farming deployment; sensor and sample details not independently extracted.",
+    "metric": "System and monitoring outcomes; no predictive-model score is asserted here.",
+    "mainFinding": "Presents an IoT-based smart-farming system for Colombian coffee farms.",
+    "limitation": "Deployment usefulness depends on the local sensor setup, connectivity, and farm conditions; broader transferability is not established by the title alone.",
+    "doi": "10.1016/j.compag.2021.106442",
+    "url": "https://doi.org/10.1016/j.compag.2021.106442",
+    "summary": "This study presents an IoT smart-farming system for Colombian coffee farms. Sensor configuration and reported operating results should be checked in the publisher article before quoting exact values.",
+    "tags": [
+      "iot"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p8",
+    "title": "Sustainable agriculture by the Internet of Things – A practitioner’s approach to monitor sustainability progress",
+    "authors": "Wolfert, S., Isakhanyan, G.",
+    "year": 2022,
+    "application": "Smart Agriculture Data & System Architecture",
+    "modelFamily": "IoT / sustainability monitoring",
+    "dataset": "Sustainability-monitoring variables as described in the practitioner approach; detailed data source not extracted.",
+    "metric": "Sustainability indicators; no classification/yield benchmark is asserted here.",
+    "mainFinding": "Describes an Internet-of-Things practitioner approach for monitoring sustainability progress in agriculture.",
+    "limitation": "The application and indicators depend on the chosen sustainability framework and implementation context; quantitative effectiveness is not reproduced in this catalogue.",
+    "doi": "10.1016/j.compag.2022.107226",
+    "url": "https://doi.org/10.1016/j.compag.2022.107226",
+    "summary": "This paper discusses an IoT practitioner approach to monitoring agricultural sustainability. Specific deployment metrics are not reproduced until checked against the original text.",
+    "tags": [
+      "iot"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p9",
+    "title": "Optimization of irrigation and fertigation in smart agriculture: An IoT-based micro-services framework",
+    "authors": "Adamo, T., Caivano, D., Colizzi, L., Dimauro, G., Guerriero, E.",
+    "year": 2025,
+    "application": "Smart Agriculture Data & System Architecture",
+    "modelFamily": "IoT / irrigation optimisation",
+    "dataset": "Study-specific irrigation and fertigation data; source details not independently extracted in this audit.",
+    "metric": "Optimisation/water-use indicators are not reproduced until verified against the full text.",
+    "mainFinding": "Presents an IoT microservices framework for irrigation and fertigation optimisation in smart agriculture.",
+    "limitation": "System performance depends on sensor calibration, control design, and local growing conditions; exact study limitations require full-text confirmation.",
+    "doi": "10.1016/j.atech.2025.100885",
+    "url": "https://doi.org/10.1016/j.atech.2025.100885",
+    "summary": "This paper proposes an IoT microservices framework for irrigation and fertigation optimisation. No unsupported water-savings percentage is included here.",
+    "tags": [
+      "irrigation",
+      "iot",
+      "twin",
+      "soil"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p10",
+    "title": "Federated Learning: Crop classification in a smart farm decentralised network",
+    "authors": "Idoje, G., Dagiuklas, T., Iqbal, M.",
+    "year": 2023,
+    "application": "Smart Agriculture Data & System Architecture",
+    "modelFamily": "Federated Learning",
+    "dataset": "Farm dataset for chickpea crop classification using climatic parameters as features; detailed dataset is available on request.",
+    "metric": "Model convergence and relative accuracy (exact accuracy value not stated in the checked abstract).",
+    "mainFinding": "The paper applies Federated Averaging to crop classification in a decentralised smart-farm network. The abstract reports that Adam converged faster than SGD, reaching convergence after 100 epochs, and that decentralised models converged faster and achieved higher accuracy than the centralised models tested.",
+    "limitation": "The dataset is available on request, and the abstract does not establish broad generalisation across farms, crops, or non-IID operating conditions.",
+    "doi": "10.1016/j.atech.2023.100277",
+    "url": "https://doi.org/10.1016/j.atech.2023.100277",
+    "summary": "Federated Learning: Crop classification in a smart farm decentralised network. The study evaluates decentralised crop classification using climate features and crop labels; the checked abstract reports convergence behaviour but does not state a single headline accuracy percentage.",
+    "tags": [
+      "federated"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p11",
+    "title": "Review on the contribution of farming practices and technologies towards climate-smart agricultural outcomes in a European context",
+    "authors": "Erekalo, K., Pedersen, S., Christensen, T., Denver, S., Gemtou, M., Fountas, S. et al.",
+    "year": 2024,
+    "application": "Smart Agriculture Data & System Architecture",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Review on the contribution of farming practices and technologies towards climate-smart agricultural outcomes in a European context; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.atech.2024.100413",
+    "url": "https://doi.org/10.1016/j.atech.2024.100413",
+    "summary": "Review article: Review on the contribution of farming practices and technologies towards climate-smart agricultural outcomes in a European context (2024). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "irrigation"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p12",
+    "title": "A survey of deep learning techniques for weed detection from images",
+    "authors": "Hasan, A., Sohel, F., Diepeveen, D., Laga, H., Jones, M.",
+    "year": 2021,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on A survey of deep learning techniques for weed detection from images; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.compag.2021.106067",
+    "url": "https://doi.org/10.1016/j.compag.2021.106067",
+    "summary": "Review article: A survey of deep learning techniques for weed detection from images (2021). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "weed"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p13",
+    "title": "Sequential forward selection and support vector regression in comparison to LASSO regression for spring wheat yield prediction based on UAV imagery",
+    "authors": "Shafiee, S., Lied, L., Burud, I., Dieseth, J., Alsheikh, M., Lillemo, M.",
+    "year": 2021,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "Support Vector Regression / LASSO",
+    "dataset": "Spring-wheat field trials using multi-temporal UAV imagery and vegetation indices.",
+    "metric": "The study compares sequential forward selection with support vector regression and LASSO for spring-wheat yield prediction from UAV imagery. Exact quantitative results are not reproduced here pending source-level rechecking.",
+    "mainFinding": "The study compares sequential forward selection and support-vector regression with LASSO regression for spring-wheat yield prediction. The publisher highlights report that LASSO greatly reduced computation time while SFS and LASSO delivered similarly good predictions; NDVI was useful during late grain filling, while MTC and EVI were more important earlier.",
+    "limitation": "The result is tied to spring-wheat trials and the UAV capture dates/vegetation indices used. It should not be assumed to transfer unchanged to other crops or regions.",
+    "doi": "10.1016/j.compag.2021.106036",
+    "url": "https://doi.org/10.1016/j.compag.2021.106036",
+    "summary": "Shafiee et al. (2021) compare feature-selection and regression approaches for spring-wheat yield prediction from UAV imagery. The publisher highlights and AGRIS record describe the relative findings; no unsupported RMSE is shown.",
+    "tags": [
+      "yield",
+      "uav",
+      "wheat"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p14",
+    "title": "A comprehensive review of remote sensing platforms, sensors, and applications in nut crops",
+    "authors": "Jafarbiglu, H., Pourreza, A.",
+    "year": 2022,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on A comprehensive review of remote sensing platforms, sensors, and applications in nut crops; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.compag.2022.106844",
+    "url": "https://doi.org/10.1016/j.compag.2022.106844",
+    "summary": "Review article: A comprehensive review of remote sensing platforms, sensors, and applications in nut crops (2022). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "sensor",
+      "edge"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p15",
+    "title": "Interpretability of deep learning models for crop yield forecasting",
+    "authors": "Paudel, D., de Wit, A., Boogaard, H., Marcos, D., Osinga, S., Athanasiadis, I.",
+    "year": 2023,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "LSTM / 1D-CNN / gradient-boosted trees",
+    "dataset": "The European Commission Joint Research Centre MARS Crop Yield Forecasting System.",
+    "metric": "Model comparison and feature-attribution analysis; no numerical R²/RMSE value is reproduced in this catalogue.",
+    "mainFinding": "The authors compare LSTM and one-dimensional CNN neural networks with a linear-trend model and gradient-boosted decision trees. Their summary reports that LSTM performed statistically better than GBDT for soft wheat in Germany and similarly for the other case studies; feature attribution was reviewed with crop-modelling experts.",
+    "limitation": "The study reports that the neural networks struggled to capture the effects of extreme temperature and moisture conditions. Findings depend on the crop cases and forecasting system studied.",
+    "doi": "10.1016/j.compag.2023.107663",
+    "url": "https://doi.org/10.1016/j.compag.2023.107663",
+    "summary": "Paudel et al. (2023) assess performance and interpretability of deep-learning models for crop-yield forecasting using the JRC MARS system. This catalogue retains the qualitative comparison from the research portal and omits unverified numeric scores.",
+    "tags": [
+      "yield",
+      "soil",
+      "wheat"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p16",
+    "title": "Using NDVI for the assessment of canopy cover in agricultural crops within modelling research",
+    "authors": "Tenreiro, T., García-Vila, M., Gómez, J., Jiménez-Berni, J., Fereres, E.",
+    "year": 2021,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "Remote sensing / NDVI",
+    "dataset": "Agricultural crop canopy observations associated with NDVI; specific data sources not transcribed.",
+    "metric": "Canopy-cover assessment measures; numeric values are not reproduced pending source-level checking.",
+    "mainFinding": "Examines the use of NDVI to assess canopy cover in agricultural crop-modelling research.",
+    "limitation": "NDVI behaviour can depend on crop, growth stage, canopy closure, and sensing conditions; the study-specific validation limits must be checked in the original article.",
+    "doi": "10.1016/j.compag.2021.106038",
+    "url": "https://doi.org/10.1016/j.compag.2021.106038",
+    "summary": "This paper examines NDVI for crop canopy-cover assessment. Numerical performance is intentionally omitted until it is transcribed from the publisher text.",
+    "tags": [
+      "wheat"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p17",
+    "title": "Developing machine learning models with multi-source environmental data to predict wheat yield in China",
+    "authors": "Li, L., Wang, B., Feng, P., Li Liu, D., He, Q., Zhang, Y. et al.",
+    "year": 2022,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "Random Forest / SVM",
+    "dataset": "Multi-source wheat-yield and environmental data for China, including satellite vegetation indices, climate variables, and soil properties.",
+    "metric": "Random Forest with NIRv: R² = 0.74 and RMSE = 758 kg/ha, as stated in the publisher abstract.",
+    "mainFinding": "The study compares Random Forest and SVM models with different vegetation indices. The publisher abstract reports that the Random Forest using NIRv performed better than variants using NDVI and EVI, with NIRv from jointing to heading the most important yield predictor.",
+    "limitation": "The evaluation concerns wheat yield prediction in China. Transfer to other crops and regions requires local validation despite the authors discussing broader potential.",
+    "doi": "10.1016/j.compag.2022.106790",
+    "url": "https://doi.org/10.1016/j.compag.2022.106790",
+    "summary": "Li et al. (2022) integrate multi-source environmental variables into Random Forest and SVM models for wheat yield prediction in China. The cited publisher abstract reports R² = 0.74 and RMSE = 758 kg/ha for Random Forest using NIRv.",
+    "tags": [
+      "yield",
+      "wheat"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p18",
+    "title": "Yield estimation from SAR data using patch-based deep learning and machine learning techniques",
+    "authors": "Hashemi, M., Tan, P., Jalilvand, E., Wilke, B., Alemohammad, H., Das, N.",
+    "year": 2024,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "SAR / patch-based deep learning",
+    "dataset": "Synthetic-aperture radar data used for crop-yield estimation; study-specific crop and sample details not independently extracted.",
+    "metric": "Yield-estimation metrics not transcribed in this audit.",
+    "mainFinding": "Investigates patch-based deep-learning and machine-learning techniques for estimating yield from SAR data.",
+    "limitation": "Results may depend on sensor characteristics, patch construction, crop type, and geographic validation; study-specific limits have not been independently extracted.",
+    "doi": "10.1016/j.compag.2024.109340",
+    "url": "https://doi.org/10.1016/j.compag.2024.109340",
+    "summary": "This empirical study concerns yield estimation from SAR data. Exact datasets and performance values are not reproduced here without full-text verification.",
+    "tags": [
+      "yield",
+      "wheat"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p19",
+    "title": "Advancing wheat crop analysis: A survey of deep learning approaches using hyperspectral imaging",
+    "authors": "Zidi, F., Ouafi, A., Bougourzi, F., Distante, C., Taleb-Ahmed, A.",
+    "year": 2025,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Advancing wheat crop analysis: A survey of deep learning approaches using hyperspectral imaging; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.compag.2025.110770",
+    "url": "https://doi.org/10.1016/j.compag.2025.110770",
+    "summary": "Review article: Advancing wheat crop analysis: A survey of deep learning approaches using hyperspectral imaging (2025). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "yield",
+      "disease",
+      "wheat"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p20",
+    "title": "Early yield estimation in wheat using open access global datasets and artificial intelligence",
+    "authors": "Akcapınar, M., Apaydin, H.",
+    "year": 2025,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "Machine-learning yield estimation",
+    "dataset": "Open-access global wheat-yield datasets (specific sources not transcribed in this audit).",
+    "metric": "Yield-prediction metrics not reproduced until checked against the original paper.",
+    "mainFinding": "Studies early wheat-yield estimation using open-access global datasets and artificial-intelligence methods.",
+    "limitation": "Global datasets may vary in spatial resolution, coverage, and measurement protocol; specific validation limits must be read from the paper.",
+    "doi": "10.1016/j.compag.2025.110486",
+    "url": "https://doi.org/10.1016/j.compag.2025.110486",
+    "summary": "This paper examines early wheat-yield estimation with open-access global data. Exact model comparisons are not presented here until they are source-checked.",
+    "tags": [
+      "yield",
+      "wheat"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p21",
+    "title": "Multi-sensor integration and cloud-native AI for climate-smart agricultural monitoring: A systems framework",
+    "authors": "Petrovic, B., Roubík, H., Csambalik, L., Dindaroğlu, T., Staš, J., Banout, J.",
+    "year": 2026,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "Conceptual framework / system design",
+    "dataset": "Not applicable — conceptual or system-framework paper; no single benchmark dataset is asserted in this catalogue.",
+    "metric": "Not applicable — conceptual/framework paper.",
+    "mainFinding": "Presents or discusses a framework related to Multi-sensor integration and cloud-native AI for climate-smart agricultural monitoring: A systems framework; no numerical predictive-performance result is asserted here.",
+    "limitation": "Framework-level findings require validation in specific agricultural settings. No universal model-performance score can be inferred from the bibliographic record alone.",
+    "doi": "10.1016/j.compag.2026.112182",
+    "url": "https://doi.org/10.1016/j.compag.2026.112182",
+    "summary": "Conceptual/system paper: Multi-sensor integration and cloud-native AI for climate-smart agricultural monitoring: A systems framework (2026). This catalogue does not assign an empirical benchmark score unless it is documented in the original publication.",
+    "tags": [
+      "yield",
+      "sensor"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p22",
+    "title": "Computational approaches for modelling soil water repellency: A comprehensive review",
+    "authors": "Kanchan, M., Henry, D., Harper, R., Sohel, F.",
+    "year": 2026,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Computational approaches for modelling soil water repellency: A comprehensive review; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.compag.2026.112283",
+    "url": "https://doi.org/10.1016/j.compag.2026.112283",
+    "summary": "Review article: Computational approaches for modelling soil water repellency: A comprehensive review (2026). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "soil"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p23",
+    "title": "An improved YOLOv5 model based on visual attention mechanism: Application to recognition of tomato virus disease",
+    "authors": "Qi, J., Liu, X., Liu, K., Xu, F., Guo, H., Tian, X. et al.",
+    "year": 2022,
+    "application": "Monitoring & Detection",
+    "modelFamily": "SE-YOLOv5 / object detection",
+    "dataset": "A tomato-virus-disease image dataset collected by mobile phone in greenhouse settings in Taigu County, Shanxi, China.",
+    "metric": "SE-YOLOv5: test accuracy = 91.07%; mAP@0.5 = 94.10%, as reported in the publisher abstract.",
+    "mainFinding": "The study introduces an SE-YOLOv5 tomato-virus-disease recognition model that uses a squeeze-and-excitation attention mechanism to emphasize image features. The publisher abstract reports 91.07% accuracy and 94.10% mAP@0.5.",
+    "limitation": "The reported evaluation is on the study-specific tomato-virus dataset. The figures should not be treated as universal performance for all plant diseases, crops, or field conditions.",
+    "doi": "10.1016/j.compag.2022.106780",
+    "url": "https://doi.org/10.1016/j.compag.2022.106780",
+    "summary": "Qi et al. (2022) propose an attention-enhanced YOLOv5 model for tomato virus-disease recognition. The publisher abstract reports 91.07% test accuracy and 94.10% mAP@0.5.",
+    "tags": [
+      "disease"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p24",
+    "title": "A deep learning approach combining instance and semantic segmentation to identify diseases and pests of coffee leaves from in-field images",
+    "authors": "Tassis, L., Tozzi de Souza, J., Krohling, R.",
+    "year": 2021,
+    "application": "Monitoring & Detection",
+    "modelFamily": "Mask R-CNN / U-Net / PSPNet / ResNet",
+    "dataset": "A newly constructed coffee-leaf instance-segmentation dataset using smartphone images of coffee-tree portions captured in natural scenes under varied lighting and backgrounds.",
+    "metric": "Mask R-CNN: precision 73.90% and recall 71.90%; U-Net mIoU 94.25%; PSPNet mIoU 93.54%, as reported in the publisher abstract.",
+    "mainFinding": "The study combines Mask R-CNN for instance segmentation, U-Net and PSPNet for semantic segmentation, and ResNet for classification of coffee-leaf biotic stress in field images.",
+    "limitation": "The task involves natural field images affected by lighting variation, complex backgrounds, and image noise. Results from this dataset do not establish performance on every coffee cultivar or farm.",
+    "doi": "10.1016/j.compag.2021.106191",
+    "url": "https://doi.org/10.1016/j.compag.2021.106191",
+    "summary": "Tassis et al. (2021) propose a pipeline for identifying coffee-leaf diseases and pests in in-field images. The publisher abstract reports separate precision/recall and segmentation mIoU values, which are kept as distinct metrics rather than combined into a fabricated F1 score.",
+    "tags": [
+      "disease"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p25",
+    "title": "MEAN-SSD: A novel real-time detector for apple leaf diseases using improved light-weight convolutional neural networks",
+    "authors": "Sun, H., Xu, H., Liu, B., He, D., He, J., Zhang, H. et al.",
+    "year": 2021,
+    "application": "Monitoring & Detection",
+    "modelFamily": "MEAN-SSD / lightweight CNN",
+    "dataset": "AppleDisease5, a dataset of apple-leaf images covering five diseases with simple and complex backgrounds.",
+    "metric": "MEAN-SSD: mAP = 83.12% and speed = 12.53 FPS, as reported in the publisher abstract.",
+    "mainFinding": "The authors propose a lightweight MEAN-SSD detector using a Mobile End AppleNet block and Apple-Inception module to target real-time apple-leaf disease detection on mobile devices.",
+    "limitation": "The reported performance is specific to AppleDisease5 and the study setup. Deployment performance on different devices and in new orchard conditions needs separate validation.",
+    "doi": "10.1016/j.compag.2021.106379",
+    "url": "https://doi.org/10.1016/j.compag.2021.106379",
+    "summary": "Sun et al. (2021) introduce MEAN-SSD for real-time apple-leaf disease detection. The publisher abstract reports 83.12% mAP and 12.53 FPS on AppleDisease5.",
+    "tags": [
+      "disease"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p26",
+    "title": "Detection of tomato plant phenotyping traits using YOLOv5-based single stage detectors",
+    "authors": "Cardellicchio, A., Solimani, F., Dimauro, G., Petrozza, A., Summerer, S., Cellini, F. et al.",
+    "year": 2023,
+    "application": "Monitoring & Detection",
+    "modelFamily": "YOLOv5 / object detection",
+    "dataset": "Tomato-plant phenotyping images; dataset size and acquisition conditions not independently extracted.",
+    "metric": "Detection metrics not reproduced until checked against the article.",
+    "mainFinding": "Evaluates YOLOv5-based single-stage detectors for tomato-plant phenotyping traits.",
+    "limitation": "Performance depends on trait definitions, imaging conditions, and the dataset used; exact generalisation limits require full-text extraction.",
+    "doi": "10.1016/j.compag.2023.107757",
+    "url": "https://doi.org/10.1016/j.compag.2023.107757",
+    "summary": "This study applies YOLOv5-based single-stage detectors to tomato phenotyping. No unsupported accuracy or mAP value is reproduced here.",
+    "tags": [
+      "precision farming",
+      "machine learning",
+      "smart agriculture"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p27",
+    "title": "Applications of deep learning in precision weed management: A review",
+    "authors": "Rai, N., Zhang, Y., Ram, B., Schumacher, L., Yellavajjala, R., Bajwa, S. et al.",
+    "year": 2023,
+    "application": "Monitoring & Detection",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Applications of deep learning in precision weed management: A review; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.compag.2023.107698",
+    "url": "https://doi.org/10.1016/j.compag.2023.107698",
+    "summary": "Review article: Applications of deep learning in precision weed management: A review (2023). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "drone",
+      "weed",
+      "edge"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p28",
+    "title": "Label-efficient learning in agriculture: A comprehensive review",
+    "authors": "Li, J., Chen, D., Qi, X., Li, Z., Huang, Y., Morris, D. et al.",
+    "year": 2023,
+    "application": "Monitoring & Detection",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Label-efficient learning in agriculture: A comprehensive review; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.compag.2023.108412",
+    "url": "https://doi.org/10.1016/j.compag.2023.108412",
+    "summary": "Review article: Label-efficient learning in agriculture: A comprehensive review (2023). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "precision farming",
+      "machine learning",
+      "smart agriculture"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p29",
+    "title": "Detecting volunteer cotton plants in a corn field with deep learning on UAV remote-sensing imagery",
+    "authors": "Kumar Yadav, P., Alex Thomasson, J., Hardin, R., Searcy, S., Braga-Neto, U., Popescu, S. et al.",
+    "year": 2023,
+    "application": "Monitoring & Detection",
+    "modelFamily": "Deep learning / UAV object detection",
+    "dataset": "UAV remote-sensing imagery of volunteer cotton plants in a corn field; study-specific image count not extracted.",
+    "metric": "Detection results not reproduced until checked against the article.",
+    "mainFinding": "Investigates deep-learning detection of volunteer cotton plants in corn fields using UAV imagery.",
+    "limitation": "Results are tied to the crop mixture and aerial imagery conditions in the studied field; transfer to other settings requires validation.",
+    "doi": "10.1016/j.compag.2022.107551",
+    "url": "https://doi.org/10.1016/j.compag.2022.107551",
+    "summary": "This study examines UAV-based detection of volunteer cotton plants in a corn field. Numerical metrics are not reproduced without source-level extraction.",
+    "tags": [
+      "cotton",
+      "uav"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p30",
+    "title": "UAV-based path planning for efficient localization of non-uniformly distributed weeds using prior knowledge: A reinforcement-learning approach",
+    "authors": "van Essen, R., van Henten, E., Kootstra, G.",
+    "year": 2025,
+    "application": "Monitoring & Detection",
+    "modelFamily": "Reinforcement learning / UAV path planning",
+    "dataset": "Weed-localisation/path-planning environment described by the study; field-versus-simulation data details not extracted.",
+    "metric": "Path-planning/localisation outcomes not reproduced in this catalogue.",
+    "mainFinding": "Investigates reinforcement-learning-based UAV path planning for locating non-uniformly distributed weeds using prior knowledge.",
+    "limitation": "Operational performance can depend on map quality, prior information, battery life, and field conditions; study-specific limits need full-text review.",
+    "doi": "10.1016/j.compag.2025.110651",
+    "url": "https://doi.org/10.1016/j.compag.2025.110651",
+    "summary": "This study addresses weed localisation through UAV path planning and reinforcement learning. Its quantitative results are not reproduced pending source checking.",
+    "tags": [
+      "weed",
+      "uav",
+      "edge"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p31",
+    "title": "Semi-supervised weed detection for rapid deployment and enhanced efficiency",
+    "authors": "Saleh, A., Olsen, A., Wood, J., Philippa, B., Rahimi Azghadi, M.",
+    "year": 2025,
+    "application": "Monitoring & Detection",
+    "modelFamily": "Semi-supervised weed detection",
+    "dataset": "Study-specific labelled and unlabelled weed imagery; dataset size not independently extracted.",
+    "metric": "Detection metrics not reproduced until source-level verification.",
+    "mainFinding": "Investigates semi-supervised weed detection intended to support rapid deployment and improve efficiency.",
+    "limitation": "Performance depends on the quality of labelled data and the distribution of unlabelled images; cross-domain transfer must be verified in the original study.",
+    "doi": "10.1016/j.compag.2025.110410",
+    "url": "https://doi.org/10.1016/j.compag.2025.110410",
+    "summary": "This paper studies semi-supervised weed detection. Exact metrics are intentionally omitted until verified from the source.",
+    "tags": [
+      "yield",
+      "weed",
+      "cotton",
+      "wheat"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p32",
+    "title": "Nutrients deficiency diagnosis of rice crop by weighted average ensemble learning",
+    "authors": "Talukder, M., Sarkar, A.",
+    "year": 2023,
+    "application": "Monitoring & Detection",
+    "modelFamily": "Weighted ensemble classification",
+    "dataset": "Rice-crop nutrient-deficiency study dataset; sample details and data modality not independently extracted.",
+    "metric": "Classification metrics not reproduced until checked against the article.",
+    "mainFinding": "Investigates weighted-average ensemble learning for diagnosing nutrient deficiencies in rice crops.",
+    "limitation": "Diagnostic performance can depend on nutrient classes, class balance, and local crop conditions; the paper-specific validation limits require full-text extraction.",
+    "doi": "10.1016/j.atech.2022.100155",
+    "url": "https://doi.org/10.1016/j.atech.2022.100155",
+    "summary": "This study applies weighted-average ensemble learning to rice nutrient-deficiency diagnosis. Quantitative scores are not reproduced without source-level confirmation.",
+    "tags": [
+      "precision farming",
+      "machine learning",
+      "smart agriculture"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p33",
+    "title": "Early weed identification based on deep learning: A review",
+    "authors": "Zhang, Y., Wang, M., Zhao, D., Liu, C., Liu, Z.",
+    "year": 2023,
+    "application": "Monitoring & Detection",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Early weed identification based on deep learning: A review; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.atech.2022.100123",
+    "url": "https://doi.org/10.1016/j.atech.2022.100123",
+    "summary": "Review article: Early weed identification based on deep learning: A review (2023). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "weed",
+      "edge"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p34",
+    "title": "Digital Twins in greenhouse horticulture: A review",
+    "authors": "Ariesen-Verschuur, N., Verdouw, C., Tekinerdogan, B.",
+    "year": 2022,
+    "application": "Resource & Operations Optimisation",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Digital Twins in greenhouse horticulture: A review; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.compag.2022.107183",
+    "url": "https://doi.org/10.1016/j.compag.2022.107183",
+    "summary": "Review article: Digital Twins in greenhouse horticulture: A review (2022). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "twin",
+      "iot"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p35",
+    "title": "A nutrient recommendation system for soil fertilization based on evolutionary computation",
+    "authors": "Ahmed, U., Lin, J., Srivastava, G., Djenouri, Y.",
+    "year": 2021,
+    "application": "Resource & Operations Optimisation",
+    "modelFamily": "Evolutionary computation / optimisation",
+    "dataset": "Soil-fertilisation recommendation inputs; specific soil attributes and study sample not transcribed.",
+    "metric": "Optimisation/recommendation quality; R² and RMSE are not assumed without source evidence.",
+    "mainFinding": "Presents an evolutionary-computation-based system for recommending soil fertilisation.",
+    "limitation": "Recommendations depend on local soil measurements, nutrient targets, and agronomic constraints; study-specific evaluation details require full-text review.",
+    "doi": "10.1016/j.compag.2021.106407",
+    "url": "https://doi.org/10.1016/j.compag.2021.106407",
+    "summary": "This paper addresses nutrient recommendation for soil fertilisation using evolutionary computation. Generic regression metrics have not been assigned.",
+    "tags": [
+      "yield",
+      "soil",
+      "sensor",
+      "edge"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p36",
+    "title": "A mixed-autonomous robotic platform for intra-row and inter-row weed removal for precision agriculture",
+    "authors": "Visentin, F., Cremasco, S., Sozzi, M., Signorini, L., Signorini, M., Marinello, F. et al.",
+    "year": 2023,
+    "application": "Resource & Operations Optimisation",
+    "modelFamily": "Autonomous robotic weed removal",
+    "dataset": "Robotic-platform trials for intra-row and inter-row weed removal; trial details not independently extracted.",
+    "metric": "Robotic weeding/platform outcomes; no computer-vision score is asserted here.",
+    "mainFinding": "Describes a mixed-autonomous robotic platform for intra-row and inter-row weed removal in precision agriculture.",
+    "limitation": "Performance depends on row geometry, crop/weed configuration, and field conditions; exact evaluation scope requires the original paper.",
+    "doi": "10.1016/j.compag.2023.108270",
+    "url": "https://doi.org/10.1016/j.compag.2023.108270",
+    "summary": "This paper evaluates an autonomous robotic platform for precision weed removal. Dataset and performance details are not reproduced without full-text checking.",
+    "tags": [
+      "yield",
+      "weed",
+      "soil"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p37",
+    "title": "Intelligent thermal image-based sensor for affordable measurement of crop canopy temperature",
+    "authors": "Giménez-Gallego, J., González-Teruel, J., Soto-Valles, F., Jiménez-Buendía, M., Navarro-Hellín, H., Torres-Sánchez, R.",
+    "year": 2021,
+    "application": "Resource & Operations Optimisation",
+    "modelFamily": "Thermal imaging / canopy-temperature sensing",
+    "dataset": "Thermal images and reference crop-canopy temperature measurements; sample details not independently extracted.",
+    "metric": "Temperature measurement agreement/error; no generic ML classification score is asserted.",
+    "mainFinding": "Presents an intelligent thermal-imaging sensor aimed at affordable crop-canopy-temperature measurement.",
+    "limitation": "Calibration, emissivity, sensor geometry, and environmental conditions can influence thermal measurement; study-specific error ranges require source checking.",
+    "doi": "10.1016/j.compag.2021.106319",
+    "url": "https://doi.org/10.1016/j.compag.2021.106319",
+    "summary": "This study focuses on thermal-image-based crop-canopy temperature sensing. Unsupported throughput or classification metrics have been removed.",
+    "tags": [
+      "irrigation",
+      "sensor"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p38",
+    "title": "A reinforcement learning approach to irrigation decision-making for rice using weather forecasts",
+    "authors": "Chen, M., Cui, Y., Wang, X., Xie, H., Liu, F., Luo, T. et al.",
+    "year": 2021,
+    "application": "Resource & Operations Optimisation",
+    "modelFamily": "Deep Q-Network / reinforcement learning",
+    "dataset": "Weather forecasts and observed meteorological data for paddy-rice growth near Nanchang, China, collected for the 2012–2019 growing seasons.",
+    "metric": "In the reported simulation, DQN irrigation saved 23 mm of irrigation water and reduced drainage by 21 mm, with no significant yield reduction compared with conventional irrigation.",
+    "mainFinding": "The study proposes a Deep Q-learning strategy that uses short-term weather forecasts for irrigation decisions in paddy rice and evaluates it against conventional flooded irrigation.",
+    "limitation": "The reported outcomes are simulation results for the studied paddy-rice setting; they should not be generalized to other crops, soils, or climates without validation.",
+    "doi": "10.1016/j.agwat.2021.106838",
+    "url": "https://doi.org/10.1016/j.agwat.2021.106838",
+    "summary": "Chen et al. (2021) evaluate a Deep Q-learning irrigation strategy for paddy rice using weather forecasts. The publisher-registered abstract reports 23 mm of irrigation water savings and 21 mm less drainage in the case study, without significant yield reduction.",
+    "tags": [
+      "yield",
+      "irrigation"
+    ],
+    "isFoundational": false,
+    "venue": "Agricultural Water Management"
+  },
+  {
+    "id": "p39",
+    "title": "Water management dilemma in the agricultural sector of Iran: A review focusing on water governance",
+    "authors": "Nouri, M., Homaee, M., Pereira, L., Bybordi, M.",
+    "year": 2023,
+    "application": "Resource & Operations Optimisation",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Water management dilemma in the agricultural sector of Iran: A review focusing on water governance; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.agwat.2023.108480",
+    "url": "https://doi.org/10.1016/j.agwat.2023.108480",
+    "summary": "Review article: Water management dilemma in the agricultural sector of Iran: A review focusing on water governance (2023). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "irrigation"
+    ],
+    "isFoundational": false,
+    "venue": "Agricultural Water Management"
+  },
+  {
+    "id": "p40",
+    "title": "Digital technologies for water use and management in agriculture: Recent applications and future outlook",
+    "authors": "Parra-López, C., Ben Abdallah, S., Garcia-Garcia, G., Hassoun, A., Trollman, H., Jagtap, S. et al.",
+    "year": 2025,
+    "application": "Resource & Operations Optimisation",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Digital technologies for water use and management in agriculture: Recent applications and future outlook; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.agwat.2025.109347",
+    "url": "https://doi.org/10.1016/j.agwat.2025.109347",
+    "summary": "Review article: Digital technologies for water use and management in agriculture: Recent applications and future outlook (2025). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "irrigation",
+      "sensor",
+      "uav",
+      "soil"
+    ],
+    "isFoundational": false,
+    "venue": "Agricultural Water Management"
+  },
+  {
+    "id": "p41",
+    "title": "AquaCrop-OSPy: Bridging the gap between research and practice in crop-water modeling",
+    "authors": "Kelly, T., Foster, T.",
+    "year": 2021,
+    "application": "Resource & Operations Optimisation",
+    "modelFamily": "AquaCrop-OSPy / crop-water simulation",
+    "dataset": "Crop, weather, and soil inputs used in AquaCrop-OSPy examples; detailed cases not transcribed.",
+    "metric": "Crop-water-model calibration/validation outputs; no supervised-ML score is asserted.",
+    "mainFinding": "Presents AquaCrop-OSPy as a Python implementation intended to bridge crop-water modelling research and practice.",
+    "limitation": "Simulation fidelity depends on input quality, calibration, and crop/site conditions; the implementation is not itself evidence of universal prediction performance.",
+    "doi": "10.1016/j.agwat.2021.106976",
+    "url": "https://doi.org/10.1016/j.agwat.2021.106976",
+    "summary": "This paper presents AquaCrop-OSPy as an accessible crop-water modelling tool. Its results should be interpreted as crop-model outputs, not generic machine-learning accuracy.",
+    "tags": [
+      "irrigation"
+    ],
+    "isFoundational": false,
+    "venue": "Agricultural Water Management"
+  },
+  {
+    "id": "p42",
+    "title": "Assimilation of soil moisture and canopy cover data improves maize simulation using an under-calibrated crop model",
+    "authors": "Lu, Y., Chibarabada, T., Ziliani, M., Onema, J., McCabe, M., Sheffield, J.",
+    "year": 2021,
+    "application": "Resource & Operations Optimisation",
+    "modelFamily": "Crop-model data assimilation",
+    "dataset": "Soil-moisture and canopy-cover observations used to improve maize crop simulation; detailed sample information not transcribed.",
+    "metric": "Crop-simulation agreement metrics not reproduced until checked against the study.",
+    "mainFinding": "Investigates assimilation of soil-moisture and canopy-cover data to improve maize simulation with an under-calibrated crop model.",
+    "limitation": "Benefits may depend on measurement quality, model calibration, crop stage, and the evaluated site; specific limits require the original paper.",
+    "doi": "10.1016/j.agwat.2021.106884",
+    "url": "https://doi.org/10.1016/j.agwat.2021.106884",
+    "summary": "This study examines soil-moisture and canopy-cover assimilation for maize simulation. It is treated as crop-model research rather than automatically classified as an ML benchmark.",
+    "tags": [
+      "soil"
+    ],
+    "isFoundational": false,
+    "venue": "Agricultural Water Management"
+  },
+  {
+    "id": "p43",
+    "title": "Digital Twins in Agriculture: A State-of-the-art review",
+    "authors": "Purcell, W., Neubauer, T.",
+    "year": 2023,
+    "application": "Resource & Operations Optimisation",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Digital Twins in Agriculture: A State-of-the-art review; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.atech.2022.100094",
+    "url": "https://doi.org/10.1016/j.atech.2022.100094",
+    "summary": "Review article: Digital Twins in Agriculture: A State-of-the-art review (2023). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "twin"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p44",
+    "title": "Crops yield prediction based on machine learning models: Case of West African countries",
+    "authors": "Cedric, L., Adoni, W., Aworka, R., Zoueu, J., Mutombo, F., Krichen, M. et al.",
+    "year": 2022,
+    "application": "Resource & Operations Optimisation",
+    "modelFamily": "Machine-learning crop-yield prediction",
+    "dataset": "Study-specific crop-yield and climate/agricultural data for West African countries; exact sources not independently extracted.",
+    "metric": "R²/RMSE values not reproduced here because the exact result table was not independently confirmed.",
+    "mainFinding": "Compares machine-learning approaches for crop-yield prediction in West African countries.",
+    "limitation": "Results may depend on crop, country, temporal coverage, data quality, and validation split; the exact study limitations should be checked in the full text.",
+    "doi": "10.1016/j.atech.2022.100049",
+    "url": "https://doi.org/10.1016/j.atech.2022.100049",
+    "summary": "Cedric et al. (2022) examine crop-yield prediction in West African countries. This catalogue does not repeat specific performance values until they are checked directly against the article.",
+    "tags": [
+      "yield",
+      "cotton"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p45",
+    "title": "A 3D functional plant modelling framework for agricultural digital twins",
+    "authors": "Mitsanis, C., Hurst, W., Tekinerdogan, B.",
+    "year": 2024,
+    "application": "Deployment, Ethics & Future Trends",
+    "modelFamily": "Digital-twin / functional plant modelling",
+    "dataset": "Not applicable — conceptual or system-framework paper; no single benchmark dataset is asserted in this catalogue.",
+    "metric": "Not applicable — conceptual/framework paper.",
+    "mainFinding": "Presents or discusses a framework related to A 3D functional plant modelling framework for agricultural digital twins; no numerical predictive-performance result is asserted here.",
+    "limitation": "Framework-level findings require validation in specific agricultural settings. No universal model-performance score can be inferred from the bibliographic record alone.",
+    "doi": "10.1016/j.compag.2024.108733",
+    "url": "https://doi.org/10.1016/j.compag.2024.108733",
+    "summary": "Conceptual/system paper: A 3D functional plant modelling framework for agricultural digital twins (2024). This catalogue does not assign an empirical benchmark score unless it is documented in the original publication.",
+    "tags": [
+      "yield",
+      "twin",
+      "disease",
+      "edge"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p46",
+    "title": "Cultivating FAIR principles for agri-food data",
+    "authors": "Top, J., Janssen, S., Boogaard, H., Knapen, R., Şimşek-Şenel, G.",
+    "year": 2022,
+    "application": "Deployment, Ethics & Future Trends",
+    "modelFamily": "Conceptual framework / data governance",
+    "dataset": "Not applicable — conceptual or system-framework paper; no single benchmark dataset is asserted in this catalogue.",
+    "metric": "Not applicable — conceptual/framework paper.",
+    "mainFinding": "Presents or discusses a framework related to Cultivating FAIR principles for agri-food data; no numerical predictive-performance result is asserted here.",
+    "limitation": "Framework-level findings require validation in specific agricultural settings. No universal model-performance score can be inferred from the bibliographic record alone.",
+    "doi": "10.1016/j.compag.2022.106909",
+    "url": "https://doi.org/10.1016/j.compag.2022.106909",
+    "summary": "Conceptual/system paper: Cultivating FAIR principles for agri-food data (2022). This catalogue does not assign an empirical benchmark score unless it is documented in the original publication.",
+    "tags": [
+      "precision farming",
+      "machine learning",
+      "smart agriculture"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p47",
+    "title": "Security threats to agricultural artificial intelligence: Position and perspective",
+    "authors": "Gao, Y., Camtepe, S., Sultan, N., Bui, H., Mahboubi, A., Aboutorab, H. et al.",
+    "year": 2024,
+    "application": "Deployment, Ethics & Future Trends",
+    "modelFamily": "Conceptual / position paper",
+    "dataset": "Not applicable — conceptual or system-framework paper; no single benchmark dataset is asserted in this catalogue.",
+    "metric": "Not applicable — conceptual/framework paper.",
+    "mainFinding": "Presents or discusses a framework related to Security threats to agricultural artificial intelligence: Position and perspective; no numerical predictive-performance result is asserted here.",
+    "limitation": "Framework-level findings require validation in specific agricultural settings. No universal model-performance score can be inferred from the bibliographic record alone.",
+    "doi": "10.1016/j.compag.2024.109557",
+    "url": "https://doi.org/10.1016/j.compag.2024.109557",
+    "summary": "Conceptual/system paper: Security threats to agricultural artificial intelligence: Position and perspective (2024). This catalogue does not assign an empirical benchmark score unless it is documented in the original publication.",
+    "tags": [
+      "irrigation",
+      "disease",
+      "edge"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p48",
+    "title": "Centralized and vertical federated learning for Climate-Based crop yield prediction",
+    "authors": "Köksal, D., Bennin, K., Tekinerdoğan, B.",
+    "year": 2026,
+    "application": "Deployment, Ethics & Future Trends",
+    "modelFamily": "Centralised / vertical federated learning",
+    "dataset": "Climate-based crop-yield prediction data; exact geography and sample composition not transcribed.",
+    "metric": "Crop-yield metrics not reproduced until verified from the full paper.",
+    "mainFinding": "Examines centralised and vertical federated-learning strategies for climate-based crop-yield prediction.",
+    "limitation": "Federated results can depend on client partitioning, feature alignment, privacy constraints, and differences between local data distributions; study-specific limits require source review.",
+    "doi": "10.1016/j.compag.2026.111851",
+    "url": "https://doi.org/10.1016/j.compag.2026.111851",
+    "summary": "This study compares centralised and vertical federated learning for crop-yield prediction. Quantitative values are not reproduced without source-level checking.",
+    "tags": [
+      "yield",
+      "federated",
+      "wheat"
+    ],
+    "isFoundational": false,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "p49",
+    "title": "Main drivers and barriers to the adoption of Digital Agriculture technologies",
+    "authors": "Dibbern, T., Romani, L., Massruhá, S.",
+    "year": 2024,
+    "application": "Deployment, Ethics & Future Trends",
+    "modelFamily": "Sociotechnical adoption study",
+    "dataset": "Stakeholder/adoption evidence as described in the publication; sample and method not independently extracted.",
+    "metric": "Not applicable — adoption/barrier study rather than an ML predictive benchmark.",
+    "mainFinding": "Investigates drivers and barriers to adoption of digital-agriculture technologies.",
+    "limitation": "Adoption findings may be context-specific to the studied population, infrastructure, and policy setting; sample details should be checked before generalising.",
+    "doi": "10.1016/j.atech.2024.100459",
+    "url": "https://doi.org/10.1016/j.atech.2024.100459",
+    "summary": "This study concerns adoption drivers and barriers in digital agriculture. It is not represented as a machine-learning performance experiment.",
+    "tags": [
+      "edge"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p50",
+    "title": "A concept for application of integrated digital technologies to enhance future smart agricultural systems",
+    "authors": "Gebresenbet, G., Bosona, T., Patterson, D., Persson, H., Fischer, B., Mandaluniz, N. et al.",
+    "year": 2023,
+    "application": "Deployment, Ethics & Future Trends",
+    "modelFamily": "Conceptual framework / system design",
+    "dataset": "Not applicable — conceptual or system-framework paper; no single benchmark dataset is asserted in this catalogue.",
+    "metric": "Not applicable — conceptual/framework paper.",
+    "mainFinding": "Presents or discusses a framework related to A concept for application of integrated digital technologies to enhance future smart agricultural systems; no numerical predictive-performance result is asserted here.",
+    "limitation": "Framework-level findings require validation in specific agricultural settings. No universal model-performance score can be inferred from the bibliographic record alone.",
+    "doi": "10.1016/j.atech.2023.100255",
+    "url": "https://doi.org/10.1016/j.atech.2023.100255",
+    "summary": "Conceptual/system paper: A concept for application of integrated digital technologies to enhance future smart agricultural systems (2023). This catalogue does not assign an empirical benchmark score unless it is documented in the original publication.",
+    "tags": [
+      "edge"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p51",
+    "title": "Smart farming and artificial intelligence in East Africa: Addressing indigeneity, plants, and gender",
+    "authors": "Foster, L., Szilagyi, K., Wairegi, A., Oguamanam, C., de Beer, J.",
+    "year": 2023,
+    "application": "Deployment, Ethics & Future Trends",
+    "modelFamily": "Sociotechnical / qualitative research",
+    "dataset": "Contextual and stakeholder evidence discussed in the paper; specific sampling details not independently extracted.",
+    "metric": "Not applicable — sociotechnical/qualitative analysis, not a predictive-model benchmark.",
+    "mainFinding": "Discusses smart farming and artificial intelligence in East Africa through lenses including indigeneity, plants, and gender.",
+    "limitation": "Interpretation is context-specific and should not be reduced to general quantitative claims about AI performance.",
+    "doi": "10.1016/j.atech.2022.100132",
+    "url": "https://doi.org/10.1016/j.atech.2022.100132",
+    "summary": "This paper discusses social and contextual dimensions of smart farming and AI in East Africa; no model-accuracy score is assigned.",
+    "tags": [
+      "yield",
+      "edge"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p52",
+    "title": "Drivers and barriers to climate-smart agricultural practices and technologies adoption: Insights from stakeholders of five European food supply chains",
+    "authors": "Pedersen, S., Erekalo, K., Christensen, T., Denver, S., Gemtou, M., Fountas, S. et al.",
+    "year": 2024,
+    "application": "Deployment, Ethics & Future Trends",
+    "modelFamily": "Stakeholder adoption study",
+    "dataset": "Stakeholder evidence from five European food supply chains; exact participant count and method not independently extracted.",
+    "metric": "Not applicable — adoption/barrier study rather than an ML predictive benchmark.",
+    "mainFinding": "Investigates drivers and barriers to climate-smart agricultural practices and technology adoption using stakeholder perspectives across five European food supply chains.",
+    "limitation": "Findings are shaped by the supply chains and stakeholders studied; details should be checked before applying them to other regions.",
+    "doi": "10.1016/j.atech.2024.100478",
+    "url": "https://doi.org/10.1016/j.atech.2024.100478",
+    "summary": "This paper analyses adoption of climate-smart practices and technologies through stakeholder perspectives. No predictive-model performance metric is asserted.",
+    "tags": [
+      "precision farming",
+      "machine learning",
+      "smart agriculture"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p53",
+    "title": "Artificial intelligence of things (AIoT) for precision agriculture: applications in smart irrigation, nutrient and disease management",
+    "authors": "Bayar, J., Ali, N., Cao, Z., Ren, Y., Dong, Y.",
+    "year": 2025,
+    "application": "Deployment, Ethics & Future Trends",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Artificial intelligence of things (AIoT) for precision agriculture: applications in smart irrigation, nutrient and disease management; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.atech.2025.101629",
+    "url": "https://doi.org/10.1016/j.atech.2025.101629",
+    "summary": "Review article: Artificial intelligence of things (AIoT) for precision agriculture: applications in smart irrigation, nutrient and disease management (2025). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "iot",
+      "edge",
+      "irrigation",
+      "soil",
+      "sensor"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p54",
+    "title": "What really impedes the scaling out of digital services for agriculture? A Kenyan users’ perspective",
+    "authors": "Kieti, J., Waema, T., Baumüller, H., Ndemo, E., Omwansa, T.",
+    "year": 2022,
+    "application": "Deployment, Ethics & Future Trends",
+    "modelFamily": "Sociotechnical adoption study",
+    "dataset": "Kenyan agricultural digital-service users; sample and recruitment details not independently extracted.",
+    "metric": "Not applicable — user-perspective/adoption research, not an ML benchmark.",
+    "mainFinding": "Examines barriers to scaling digital agricultural services from the perspective of users in Kenya.",
+    "limitation": "User-perspective results are context-specific and should not be generalized without considering the study sample, services, and setting.",
+    "doi": "10.1016/j.atech.2022.100034",
+    "url": "https://doi.org/10.1016/j.atech.2022.100034",
+    "summary": "This paper explores impediments to scaling digital agricultural services from a Kenyan users’ perspective. It is not a model-performance study.",
+    "tags": [
+      "yield"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "p55",
+    "title": "Cybersecurity threats and mitigation measures in agriculture 4.0 and 5.0",
+    "authors": "Maraveas, C., Rajarajan, M., Arvanitis, K., Vatsanidou, A.",
+    "year": 2024,
+    "application": "Deployment, Ethics & Future Trends",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Cybersecurity threats and mitigation measures in agriculture 4.0 and 5.0; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.1016/j.atech.2024.100616",
+    "url": "https://doi.org/10.1016/j.atech.2024.100616",
+    "summary": "Review article: Cybersecurity threats and mitigation measures in agriculture 4.0 and 5.0 (2024). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "iot",
+      "edge"
+    ],
+    "isFoundational": false,
+    "venue": "Smart Agricultural Technology"
+  },
+  {
+    "id": "f1",
+    "title": "Deep learning models for plant disease detection and diagnosis",
+    "authors": "Ferentinos, K. P.",
+    "year": 2018,
+    "application": "Monitoring & Detection",
+    "modelFamily": "CNN / Deep Learning",
+    "dataset": "An open database of 87,848 images across 25 plant species and 58 plant/disease classes, including healthy plants.",
+    "metric": "The best CNN model achieved 99.53% accuracy on 17,548 previously unseen images, as reported by the publisher.",
+    "mainFinding": "Ferentinos (2018) evaluates CNN architectures for plant-disease detection and diagnosis using leaf images. The reported maximum accuracy is 99.53% on the paper’s test data.",
+    "limitation": "The high score is tied to the article’s image classes and evaluation protocol; it is not a guarantee of accuracy in an unfamiliar live-farm deployment.",
+    "doi": "10.1016/j.compag.2018.01.009",
+    "url": "https://doi.org/10.1016/j.compag.2018.01.009",
+    "summary": "Ferentinos (2018) compare CNN-based plant-disease detection approaches using an 87,848-image database. The publisher reports 99.53% accuracy on 17,548 unseen images.",
+    "tags": [
+      "disease detection",
+      "CNN",
+      "PlantVillage",
+      "foundational benchmark"
+    ],
+    "isFoundational": true,
+    "venue": "Computers and Electronics in Agriculture"
+  },
+  {
+    "id": "f2",
+    "title": "Using Deep Learning for Image-Based Plant Disease Detection",
+    "authors": "Mohanty, S. P., Hughes, D. P., & Salathé, M.",
+    "year": 2016,
+    "application": "Monitoring & Detection",
+    "modelFamily": "CNN / Deep Learning",
+    "dataset": "PlantVillage: 54,306 images covering 14 crop species and 26 diseases or healthy classes under controlled conditions.",
+    "metric": "The best reported model achieved 99.35% accuracy on a held-out test set.",
+    "mainFinding": "Mohanty, Hughes, and Salathé (2016) demonstrate CNN-based classification of crop species and plant diseases from the PlantVillage dataset.",
+    "limitation": "The source explicitly notes that the dataset was collected under controlled conditions; real field imagery can differ substantially in backgrounds, lighting, and visual noise.",
+    "doi": "10.3389/fpls.2016.01419",
+    "url": "https://doi.org/10.3389/fpls.2016.01419",
+    "summary": "Mohanty et al. (2016) use a CNN to classify 14 crop species and 26 diseases or healthy classes from PlantVillage images, reporting 99.35% held-out accuracy.",
+    "tags": [
+      "plant pathology",
+      "deep learning",
+      "GoogLeNet",
+      "foundational"
+    ],
+    "isFoundational": true,
+    "venue": "Frontiers in Plant Science"
+  },
+  {
+    "id": "f3",
+    "title": "Machine Learning in Agriculture: A Review",
+    "authors": "Liakos, K. G., Busato, P., Moshou, D., Pearson, S., & Bochtis, D.",
+    "year": 2018,
+    "application": "Crop & Livestock Production Prediction",
+    "modelFamily": "Review / synthesis",
+    "dataset": "Not applicable — review article; synthesises published literature.",
+    "metric": "Not applicable — review article.",
+    "mainFinding": "Reviews published evidence on Machine Learning in Agriculture: A Review; it does not represent one directly comparable empirical model benchmark.",
+    "limitation": "The conclusions depend on the review scope and included studies. Results across the underlying studies should not be compared without accounting for differences in crops, datasets, metrics, and field conditions.",
+    "doi": "10.3390/s18082674",
+    "url": "https://doi.org/10.3390/s18082674",
+    "summary": "Review article: Machine Learning in Agriculture: A Review (2018). This record is treated as a literature synthesis, not as a new experiment. Consult the linked publisher page for the review's precise scope and conclusions.",
+    "tags": [
+      "literature survey",
+      "random forest",
+      "yield prediction",
+      "foundational"
+    ],
+    "isFoundational": true,
+    "venue": "Sensors"
+  }
+];
+
+export const applicationCategories: string[] = [
+  'All',
+  'Smart Agriculture Data & System Architecture',
+  'Crop & Livestock Production Prediction',
+  'Monitoring & Detection',
+  'Resource & Operations Optimisation',
+  'Deployment, Ethics & Future Trends',
+];
+
+export const modelFamilies: string[] = [
+  'All',
+  'Random Forest / Ensemble',
+  'XGBoost / Gradient Boosting',
+  'CNN / Deep Learning',
+  'YOLO / Object Detection',
+  'LSTM / Temporal Networks',
+  'Support Vector Machines (SVM)',
+  'Vision Transformer / Attention',
+  'Federated Learning',
+  'Reinforcement Learning',
+  'Digital Twins & Simulation',
+  'IoT & Edge Architecture',
+  'Machine Learning Ensemble'
+];
+
+export const yearRange: number[] = [2021, 2022, 2023, 2024, 2025, 2026];
