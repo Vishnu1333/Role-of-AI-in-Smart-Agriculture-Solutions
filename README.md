@@ -17,6 +17,7 @@ Fieldwise AI is a research and data-exploration project about how artificial int
 - [Project Structure](#project-structure)
 - [Run the React + Vite Website](#run-the-react--vite-website)
 - [Run the Python + Streamlit Dashboard](#run-the-python--streamlit-dashboard)
+- [Deploy the React Website on Vercel](#deploy-the-react-website-on-vercel)
 - [Deploy the Streamlit Dashboard](#deploy-the-streamlit-dashboard)
 - [Group Members](#group-members)
 - [Research Limitations and Academic Integrity](#research-limitations-and-academic-integrity)
@@ -27,7 +28,7 @@ Agriculture increasingly uses data from IoT sensors, weather stations, satellite
 
 **Fieldwise AI makes this landscape easier to explore.** It organises literature by application area, shows selected source-linked results, visualises the catalogue structure, and highlights constraints such as data quality, rural connectivity, cost, model generalisability, privacy, and equitable access.
 
-The React website uses a dark, violet-led creative-tech design with coral accents, responsive layouts, animations, and interactive research visualisations. The companion Streamlit app follows the same visual direction while providing a Python-based interface for searching and filtering the literature catalogue.
+The React website is the primary presentation of the project: it uses a dark, violet-led creative-tech design with coral accents, responsive layouts, animations, and interactive research visualisations. The Streamlit app is a separate, simpler Python-native research dashboard for catalogue exploration; it does **not** reproduce the React website pixel-for-pixel. To preserve the original website UI, deploy the React/Vite app on Vercel or Netlify.
 
 ### Project objectives
 
@@ -218,6 +219,31 @@ streamlit run streamlit_app.py
 ```
 
 Streamlit prints a local address, usually [http://localhost:8501](http://localhost:8501). Stop the server with `Ctrl+C` in the terminal. Keep `.venv/` local; do not upload it to GitHub.
+
+## Deploy the React Website on Vercel
+
+**Recommended when you want the original Fieldwise AI website UI.** The React/Vite website is a static front-end app. Vercel supports deploying Vite projects from a Git repository and can detect the Vite framework automatically ([Vite's deployment guide](https://vite.dev/guide/static-deploy#vercel)).
+
+This repository includes `vercel.json` with the build configuration.
+
+1. Open [Vercel](https://vercel.com/new) and sign in with GitHub.
+2. Select **Add New → Project**, then import `Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions`.
+3. Keep the project root as `./` (repository root).
+4. Confirm the settings below. The committed `vercel.json` supplies the install, build, and output settings automatically; check them during import.
+
+| Vercel setting | Value |
+|---|---|
+| Git repository | `Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions` |
+| Production branch | `main` |
+| Framework preset | `Vite` (automatic detection) |
+| Install command | `npm ci` |
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| Root directory | `./` |
+
+5. Click **Deploy**. When the build succeeds, Vercel provides a live `.vercel.app` URL. Future pushes to `main` can trigger production redeployments through the Git integration, while other branches can create preview deployments.
+
+If the build fails, check the deployment logs, run `npm ci`, `npm run typecheck`, and `npm run build` locally, then push any fix to GitHub. Do not upload `node_modules/` or commit generated `dist/` output.
 
 ## Deploy the Streamlit Dashboard
 
