@@ -127,3 +127,15 @@ The application directly addresses the 5 core assignment marking areas specified
 - The irrigation time series is synthetic demonstration data, not a farm measurement.
 - Before academic submission, the group should inspect each full paper it cites, record search/screening details, and verify every empirical claim used in the report.
 - Build status for this archive is environment-dependent. Use `npm ci` followed by `npm run build` in the target environment; do not rely on a pre-packed `node_modules` directory.
+
+
+## Optional Streamlit Community Cloud Dashboard
+
+This repository now includes a Python/Streamlit companion for exploring the same smart-agriculture literature catalogue. The original interactive website remains the React/Vite application.
+
+- Entrypoint: [streamlit_app.py](streamlit_app.py)
+- Dependencies: [requirements.txt](requirements.txt)
+- Companion data export: [streamlit_data/papers.json](streamlit_data/papers.json)
+- Deployment instructions: [STREAMLIT_DEPLOYMENT.md](STREAMLIT_DEPLOYMENT.md)
+
+Deploy the companion app from [Streamlit Community Cloud](https://share.streamlit.io/) using repository Vishnu1333/Role-of-AI-in-Smart-Agriculture-Solutions, branch main, and main file path streamlit_app.py. See the deployment guide for details. The live deployment must be created from the repository owner's Streamlit account.
