@@ -19,15 +19,225 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-      .block-container {padding-top: 2rem; padding-bottom: 3rem; max-width: 1440px;}
-      .hero {padding: 1.5rem 1.8rem; border-radius: 18px;
-        background: linear-gradient(120deg, #173f2b 0%, #2b7046 58%, #6d9a53 100%);
-        color: #fff; margin-bottom: 1rem;}
-      .hero h1 {color: #fff; padding: 0; margin: 0 0 .35rem 0;}
-      .hero p {color: #eff9ed; font-size: 1.08rem; margin: 0;}
-      .muted-note {border-left: 4px solid #b7c98d; padding: .6rem .9rem;
-        background: #f3f7ee; color: #253b2d; border-radius: 4px;}
-      a {overflow-wrap: anywhere;}
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+      :root {
+        --fw-bg: #0a0618;
+        --fw-surface: #130d2e;
+        --fw-surface-2: #1b143f;
+        --fw-violet: #625df5;
+        --fw-magenta: #d52dff;
+        --fw-coral: #ff623d;
+        --fw-text: #fdfcfb;
+        --fw-muted: #b4abcF;
+        --fw-border: rgba(255,255,255,.12);
+      }
+
+      html, body, [class*="css"], [data-testid="stMarkdownContainer"] {
+        font-family: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      [data-testid="stAppViewContainer"] {
+        background:
+          radial-gradient(ellipse 70% 35% at 12% 0%, rgba(98,93,245,.19), transparent 70%),
+          radial-gradient(ellipse 55% 32% at 100% 18%, rgba(213,45,255,.11), transparent 72%),
+          var(--fw-bg);
+        color: var(--fw-text);
+      }
+      [data-testid="stHeader"] {background: rgba(10,6,24,.82);}
+      [data-testid="stMainBlockContainer"], .block-container {
+        max-width: 1440px;
+        padding-top: 2.1rem;
+        padding-bottom: 3.2rem;
+      }
+      [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, rgba(15,11,36,.98), rgba(19,13,46,.98));
+        border-right: 1px solid var(--fw-border);
+      }
+      [data-testid="stSidebar"] > div:first-child {background: transparent;}
+      [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2,
+      [data-testid="stSidebar"] h3 {font-family: 'Space Grotesk', sans-serif; color: var(--fw-text);}
+      [data-testid="stSidebar"] label, [data-testid="stSidebar"] p,
+      [data-testid="stSidebar"] .stCaption {color: #d5cfee;}
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        padding: clamp(1.7rem, 4vw, 3.2rem);
+        border: 1px solid rgba(213,45,255,.26);
+        border-radius: 26px;
+        background:
+          radial-gradient(circle at 85% 13%, rgba(255,98,61,.17), transparent 25%),
+          radial-gradient(circle at 7% 100%, rgba(213,45,255,.18), transparent 32%),
+          linear-gradient(125deg, #0e091d 0%, #151036 53%, #21154b 100%);
+        box-shadow: 0 22px 65px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.05);
+        color: var(--fw-text);
+        margin-bottom: 1.2rem;
+      }
+      .hero:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        opacity: .32;
+        background-image:
+          linear-gradient(rgba(167,139,250,.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(167,139,250,.08) 1px, transparent 1px);
+        background-size: 38px 38px;
+        mask-image: linear-gradient(100deg, black, transparent 90%);
+      }
+      .hero-orbit {
+        position: absolute;
+        z-index: -1;
+        width: 280px;
+        height: 280px;
+        right: -72px;
+        bottom: -155px;
+        border: 1px solid rgba(255,98,61,.36);
+        border-radius: 50%;
+        box-shadow: 0 0 0 34px rgba(213,45,255,.035), 0 0 0 72px rgba(213,45,255,.025);
+      }
+      .hero-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: .55rem;
+        border: 1px solid rgba(167,139,250,.34);
+        border-radius: 999px;
+        background: rgba(98,93,245,.12);
+        color: #d5caff;
+        padding: .4rem .82rem;
+        font-size: .76rem;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .pulse-dot {
+        display: inline-block;
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: var(--fw-coral);
+        box-shadow: 0 0 13px rgba(255,98,61,.7);
+      }
+      .hero h1 {
+        font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+        font-size: clamp(2.65rem, 6vw, 5rem);
+        font-weight: 700;
+        letter-spacing: -.055em;
+        line-height: 1.02;
+        color: var(--fw-text);
+        padding: 0;
+        margin: 0 0 .8rem 0;
+      }
+      .hero .accent {
+        color: var(--fw-coral);
+        background: linear-gradient(120deg, #ff8566 8%, #d52dff 88%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero .hero-subtitle {
+        color: #e0daf7;
+        font-size: clamp(1.05rem, 2vw, 1.35rem);
+        font-weight: 500;
+        margin: 0 0 .5rem 0;
+      }
+      .hero .hero-description {
+        max-width: 760px;
+        color: #bdb3dd;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin: 0;
+      }
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: .55rem;
+        margin-top: 1.35rem;
+        color: #d6cdee;
+        font-size: .88rem;
+      }
+      .hero-meta .meta-pill {
+        border: 1px solid rgba(255,255,255,.13);
+        background: rgba(255,255,255,.045);
+        border-radius: 999px;
+        padding: .35rem .7rem;
+      }
+
+      .muted-note {
+        border: 1px solid rgba(167,139,250,.22);
+        border-left: 4px solid var(--fw-coral);
+        padding: .85rem 1rem;
+        background: linear-gradient(100deg, rgba(19,13,46,.9), rgba(27,20,63,.72));
+        color: #d7d0ef;
+        border-radius: 12px;
+        line-height: 1.65;
+        margin: 1rem 0 1.15rem;
+      }
+
+      [data-testid="stMetric"] {
+        background: linear-gradient(145deg, rgba(27,20,63,.82), rgba(19,13,46,.82));
+        border: 1px solid var(--fw-border);
+        border-radius: 16px;
+        padding: 1rem 1.1rem;
+        box-shadow: 0 10px 25px rgba(0,0,0,.12);
+      }
+      [data-testid="stMetricLabel"] {color: #bdb3dd; font-size: .86rem;}
+      [data-testid="stMetricValue"] {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        color: #fff;
+      }
+      [data-testid="stTabs"] [role="tab"] {
+        color: #bdb3dd;
+        font-weight: 600;
+        border-radius: 9px 9px 0 0;
+      }
+      [data-testid="stTabs"] [role="tab"][aria-selected="true"] {
+        color: #ff8566;
+        border-bottom-color: var(--fw-coral);
+      }
+      [data-testid="stTabs"] [role="tab"]:hover {color: #fff;}
+      [data-testid="stExpander"] {
+        background: rgba(19,13,46,.58);
+        border: 1px solid var(--fw-border);
+        border-radius: 12px;
+      }
+      [data-testid="stDataFrame"], [data-testid="stTable"] {
+        border: 1px solid var(--fw-border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      [data-testid="stTextInput"] input,
+      [data-testid="stNumberInput"] input,
+      [data-testid="stDateInput"] input {
+        background: #130d2e;
+        color: #fdfcfb;
+        border-color: rgba(167,139,250,.25);
+        border-radius: 10px;
+      }
+      [data-testid="stMultiSelect"] [data-baseweb="select"] > div,
+      [data-testid="stSelectbox"] [data-baseweb="select"] > div {
+        background: #130d2e;
+        border-color: rgba(167,139,250,.25);
+        border-radius: 10px;
+      }
+      [data-testid="stAlert"] {background: rgba(27,20,63,.82); border: 1px solid var(--fw-border);}
+      hr {border-color: rgba(255,255,255,.12);}
+      p, li {line-height: 1.65;}
+      h1, h2, h3 {font-family: 'Space Grotesk', 'DM Sans', sans-serif; letter-spacing: -.025em;}
+      a {color: #ff8566; overflow-wrap: anywhere;}
+      a:hover {color: #d52dff;}
+      .stCaption, [data-testid="stCaptionContainer"] {color: #a99fc9;}
+      button[kind="primary"] {
+        background: linear-gradient(115deg, #ff623d, #d52dff);
+        color: #fff;
+        border: 0;
+        border-radius: 999px;
+      }
     </style>
     """,
     unsafe_allow_html=True,
@@ -63,11 +273,20 @@ foundational_count = int(all_papers["isFoundational"].sum())
 st.markdown(
     """
     <div class="hero">
-      <h1>🌱 Fieldwise AI</h1>
-      <p>Role of AI in Smart Agriculture Solutions</p>
-      <p style="font-size:.9rem;margin-top:.65rem">
-        PRG4206 Machine Learning · INTI International University · Group Research Project
+      <div class="hero-orbit"></div>
+      <div class="hero-kicker"><span class="pulse-dot"></span> Smart agriculture / research intelligence</div>
+      <h1>Fieldwise <span class="accent">AI.</span></h1>
+      <p class="hero-subtitle">Role of AI in Smart Agriculture Solutions</p>
+      <p class="hero-description">
+        A critical research explorer for data-driven farming — from crop prediction and
+        computer vision to resource optimisation, deployment barriers and ethical adoption.
       </p>
+      <div class="hero-meta">
+        <span class="meta-pill">PRG4206 Machine Learning</span>
+        <span class="meta-pill">INTI International University</span>
+        <span class="meta-pill">58 catalogue records</span>
+        <span class="meta-pill">5 research focus areas</span>
+      </div>
     </div>
     """,
     unsafe_allow_html=True,
@@ -97,11 +316,20 @@ with st.sidebar:
             value=(minimum_year, maximum_year),
         )
     selected_categories = st.multiselect("Research focus areas", options=categories, default=categories)
+    if not selected_categories:
+        st.caption("No focus areas selected — showing all focus areas.")
     st.caption("Source catalogue: src/data/papers.ts")
 
+# Treat an empty category selection as "all areas" rather than returning zero rows.
+# This avoids a misleading 0 count when the user clears the multiselect.
+category_mask = (
+    base["application"].isin(selected_categories)
+    if selected_categories
+    else pd.Series(True, index=base.index)
+)
 filtered = base[
     base["year"].between(selected_years[0], selected_years[1])
-    & base["application"].isin(selected_categories)
+    & category_mask
 ].copy()
 
 if query.strip():
